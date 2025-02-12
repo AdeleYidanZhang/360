@@ -17,10 +17,10 @@ public class CamSwitch : MonoBehaviour
     public GameObject EyeBack;
     public GameObject EyeLeft;
 
-    public GameObject wall1;
-    public GameObject wall2;
-    public GameObject wall3;
-    public GameObject wall4;
+    public GameObject gate1;
+    public GameObject gate2;
+    public GameObject gate3;
+    public GameObject gate4;
 
     public GameObject DirectionForward;
     public GameObject DirectionRight;
@@ -35,105 +35,125 @@ public class CamSwitch : MonoBehaviour
     void Start()
     {
         // Start Forward Facing Perspecting. So F and B
+        Direction1();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            DirectionForward.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            DirectionForward.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            DirectionLeft.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            DirectionLeft.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            DirectionBack.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            DirectionBack.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            DirectionRight.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            DirectionRight.SetActive(false);
+        }
+    }
+
+    public void Direction1()
+    {
         CamManager.SwitchCamera(cam1);
-        transform.position = wall1.transform.position;
+        transform.position = gate1.transform.position;
 
         EyeForward.SetActive(false);
         EyeRight.SetActive(false);
         EyeBack.SetActive(false);
         EyeLeft.SetActive(true);
 
-        DirectionForward.SetActive(true);
+        DirectionForward.SetActive(false);
         DirectionForwardFade.SetActive(true);
         DirectionRight.SetActive(false);
         DirectionRightFade.SetActive(false);
-        DirectionBack.SetActive(true);
+        DirectionBack.SetActive(false);
         DirectionBackFade.SetActive(true);
         DirectionLeft.SetActive(false);
         DirectionLeftFade.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Direction2()
     {
-        if (Input.GetButtonDown("NorthCamera")) // North
-        {
-            CamManager.SwitchCamera(cam1);
-            transform.position = wall1.transform.position;
+        CamManager.SwitchCamera(cam2);
+        transform.position = gate2.transform.position;
 
-            EyeForward.SetActive(false);
-            EyeRight.SetActive(false);
-            EyeBack.SetActive(false);
-            EyeLeft.SetActive(true);
+        EyeForward.SetActive(false);
+        EyeRight.SetActive(false);
+        EyeBack.SetActive(true);
+        EyeLeft.SetActive(false);
 
-            DirectionForward.SetActive(true);
-            DirectionForwardFade.SetActive(true);
-            DirectionRight.SetActive(false);
-            DirectionRightFade.SetActive(false);
-            DirectionBack.SetActive(true);
-            DirectionBackFade.SetActive(true);
-            DirectionLeft.SetActive(false);
-            DirectionLeftFade.SetActive(false);
-        }
+        DirectionForward.SetActive(false);
+        DirectionForwardFade.SetActive(false);
+        DirectionRight.SetActive(false);
+        DirectionRightFade.SetActive(true);
+        DirectionBack.SetActive(false);
+        DirectionBackFade.SetActive(false);
+        DirectionLeft.SetActive(false);
+        DirectionLeftFade.SetActive(true);
+    }
 
-        if (Input.GetButtonDown("EastCamera")) // East
-        {
-            CamManager.SwitchCamera(cam2);
-            transform.position = wall2.transform.position;
+    public void Direction3()
+    {
+        CamManager.SwitchCamera(cam3);
+        transform.position = gate3.transform.position;
 
-            EyeForward.SetActive(false);
-            EyeRight.SetActive(false);
-            EyeBack.SetActive(true);
-            EyeLeft.SetActive(false);
+        EyeForward.SetActive(false);
+        EyeRight.SetActive(true);
+        EyeBack.SetActive(false);
+        EyeLeft.SetActive(false);
 
-            DirectionForward.SetActive(false);
-            DirectionForwardFade.SetActive(false);
-            DirectionRight.SetActive(true);
-            DirectionRightFade.SetActive(true);
-            DirectionBack.SetActive(false);
-            DirectionBackFade.SetActive(false);
-            DirectionLeft.SetActive(true);
-            DirectionLeftFade.SetActive(true);
-        }
-         
-        if (Input.GetButtonDown("SouthCamera")) // South
-        {
-            CamManager.SwitchCamera(cam3);
-            transform.position = wall3.transform.position;
+        DirectionForward.SetActive(false);
+        DirectionForwardFade.SetActive(true);
+        DirectionRight.SetActive(false);
+        DirectionRightFade.SetActive(false);
+        DirectionBack.SetActive(false);
+        DirectionBackFade.SetActive(true);
+        DirectionLeft.SetActive(false);
+        DirectionLeftFade.SetActive(false);
+    }
 
-            EyeForward.SetActive(false);
-            EyeRight.SetActive(true);
-            EyeBack.SetActive(false);
-            EyeLeft.SetActive(false);
+    public void Direction4()
+    {
+        CamManager.SwitchCamera(cam4);
+        transform.position = gate4.transform.position;
 
-            DirectionForward.SetActive(true);
-            DirectionForwardFade.SetActive(true);
-            DirectionRight.SetActive(false);
-            DirectionRightFade.SetActive(false);
-            DirectionBack.SetActive(true);
-            DirectionBackFade.SetActive(true);
-            DirectionLeft.SetActive(false);
-            DirectionLeftFade.SetActive(false);
-        }
+        EyeForward.SetActive(true);
+        EyeRight.SetActive(false);
+        EyeBack.SetActive(false);
+        EyeLeft.SetActive(false);
 
-        if (Input.GetButtonDown("WestCamera")) // West
-        {
-            CamManager.SwitchCamera(cam4);
-            transform.position = wall4.transform.position;
-
-            EyeForward.SetActive(true);
-            EyeRight.SetActive(false);
-            EyeBack.SetActive(false);
-            EyeLeft.SetActive(false);
-
-            DirectionForward.SetActive(false);
-            DirectionForwardFade.SetActive(false);
-            DirectionRight.SetActive(true);
-            DirectionRightFade.SetActive(true);
-            DirectionBack.SetActive(false);
-            DirectionBackFade.SetActive(false);
-            DirectionLeft.SetActive(true);
-            DirectionLeftFade.SetActive(true);
-        }
+        DirectionForward.SetActive(false);
+        DirectionForwardFade.SetActive(false);
+        DirectionRight.SetActive(false);
+        DirectionRightFade.SetActive(true);
+        DirectionBack.SetActive(false);
+        DirectionBackFade.SetActive(false);
+        DirectionLeft.SetActive(false);
+        DirectionLeftFade.SetActive(true);
     }
 }

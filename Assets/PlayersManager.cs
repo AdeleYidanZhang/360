@@ -12,45 +12,38 @@ public class PlayersManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Hallway1();
+    }
+
+    public void Hallway1()
+    {
         player1.GetComponent<PlayerMovement>().enabled = true;
         player2.GetComponent<PlayerMovement>().enabled = false;
         player3.GetComponent<PlayerMovement>().enabled = false;
         player4.GetComponent<PlayerMovement>().enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Hallway2()
     {
-        if (Input.GetButtonDown("NorthCamera")) // wall1
-        {
-            player1.GetComponent<PlayerMovement>().enabled = true;
-            player2.GetComponent<PlayerMovement>().enabled = false;
-            player3.GetComponent<PlayerMovement>().enabled = false;
-            player4.GetComponent<PlayerMovement>().enabled = false;
-        }
+        player1.GetComponent<PlayerMovement>().enabled = false;
+        player2.GetComponent<PlayerMovement>().enabled = true;
+        player3.GetComponent<PlayerMovement>().enabled = false;
+        player4.GetComponent<PlayerMovement>().enabled = false;
+    }
 
-        if (Input.GetButtonDown("SouthCamera")) // wall3
-        {
-            player1.GetComponent<PlayerMovement>().enabled = false;
-            player2.GetComponent<PlayerMovement>().enabled = false;
-            player3.GetComponent<PlayerMovement>().enabled = true;
-            player4.GetComponent<PlayerMovement>().enabled = false;
-        }
+    public void Hallway3()
+    {
+        player1.GetComponent<PlayerMovement>().enabled = false;
+        player2.GetComponent<PlayerMovement>().enabled = false;
+        player3.GetComponent<PlayerMovement>().enabled = true;
+        player4.GetComponent<PlayerMovement>().enabled = false;
+    }
 
-        if (Input.GetButtonDown("WestCamera")) // wall2
-        {
-            player1.GetComponent<PlayerMovement>().enabled = false;
-            player2.GetComponent<PlayerMovement>().enabled = false;
-            player3.GetComponent<PlayerMovement>().enabled = false;
-            player4.GetComponent<PlayerMovement>().enabled = true;
-        }
-
-        if (Input.GetButtonDown("EastCamera")) // wall4
-        {
-            player1.GetComponent<PlayerMovement>().enabled = false;
-            player2.GetComponent<PlayerMovement>().enabled = true;
-            player3.GetComponent<PlayerMovement>().enabled = false;
-            player4.GetComponent<PlayerMovement>().enabled = false;
-        }
+    public void Hallway4()
+    {
+        player1.GetComponent<PlayerMovement>().enabled = false;
+        player2.GetComponent<PlayerMovement>().enabled = false;
+        player3.GetComponent<PlayerMovement>().enabled = false;
+        player4.GetComponent<PlayerMovement>().enabled = true;
     }
 }

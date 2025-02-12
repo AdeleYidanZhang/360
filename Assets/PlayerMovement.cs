@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     private float horizontal;
     private float speed = 8f;
     private bool isFacingRight = false;
 
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private Rigidbody2D groundLayer;
 
     // Start is called before the first frame update
     void Start()
