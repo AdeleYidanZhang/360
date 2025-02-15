@@ -7,13 +7,11 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float speed = 8f;
     private bool isFacingRight = false;
+    private Rigidbody2D rb;
 
-    [SerializeField] private Rigidbody2D rb;
-
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame

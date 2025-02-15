@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7657961543350675558
+--- !u!1 &4208207846047841046
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,55 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6094037928595400862}
-  - component: {fileID: 282791414582686344}
-  - component: {fileID: 6167306119692490057}
+  - component: {fileID: 5616479979070965074}
+  - component: {fileID: 1586150642149065607}
+  - component: {fileID: 5664174861271182205}
+  - component: {fileID: 5240621127996432321}
   m_Layer: 0
-  m_Name: Watcher
+  m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6094037928595400862
+--- !u!4 &5616479979070965074
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7657961543350675558}
+  m_GameObject: {fileID: 4208207846047841046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.78, y: -80.98, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &282791414582686344
+--- !u!114 &1586150642149065607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7657961543350675558}
+  m_GameObject: {fileID: 4208207846047841046}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd4868f456c71a64e95f5b30669f64ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam1: {fileID: 0}
-  cam2: {fileID: 0}
-  cam3: {fileID: 0}
-  cam4: {fileID: 0}
   EyeForward: {fileID: 0}
   EyeRight: {fileID: 0}
   EyeBack: {fileID: 0}
   EyeLeft: {fileID: 0}
-  gate1: {fileID: 0}
-  gate2: {fileID: 0}
-  gate3: {fileID: 0}
-  gate4: {fileID: 0}
   DirectionForward: {fileID: 0}
   DirectionRight: {fileID: 0}
   DirectionBack: {fileID: 0}
@@ -65,19 +58,38 @@ MonoBehaviour:
   DirectionRightFade: {fileID: 0}
   DirectionBackFade: {fileID: 0}
   DirectionLeftFade: {fileID: 0}
---- !u!114 &6167306119692490057
+--- !u!114 &5664174861271182205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7657961543350675558}
+  m_GameObject: {fileID: 4208207846047841046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ea22094838d3d4b99906a4d50b6970, type: 3}
+  m_Script: {fileID: 11500000, guid: c4175945ec81b894b994f5ee54dbda0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  PlayerHall: {fileID: 0}
+  PlayerChibi: {fileID: 0}
+  cameraHall: {fileID: 0}
+  cameraChibi: {fileID: 0}
+--- !u!114 &5240621127996432321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4208207846047841046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00ef425ad88d6c469df64f1ff46ed5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gate1: {fileID: 0}
+  gate2: {fileID: 0}
+  gate3: {fileID: 0}
+  gate4: {fileID: 0}
+  chibiGate: {fileID: 0}
+  PlayerPawns: {fileID: 0}
+  VisualPawns: {fileID: 0}

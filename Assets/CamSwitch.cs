@@ -3,24 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
-using TMPro;
 
 public class CamSwitch : MonoBehaviour
 {
-    public CinemachineVirtualCamera cam1;
-    public CinemachineVirtualCamera cam2;
-    public CinemachineVirtualCamera cam3;
-    public CinemachineVirtualCamera cam4;
 
     public GameObject EyeForward;
     public GameObject EyeRight;
     public GameObject EyeBack;
     public GameObject EyeLeft;
-
-    public GameObject gate1;
-    public GameObject gate2;
-    public GameObject gate3;
-    public GameObject gate4;
 
     public GameObject DirectionForward;
     public GameObject DirectionRight;
@@ -32,46 +22,61 @@ public class CamSwitch : MonoBehaviour
     public GameObject DirectionBackFade;
     public GameObject DirectionLeftFade;
 
+    private bool leftToRightIfTrue;
+
     void Start()
     {
         // Start Forward Facing Perspecting. So F and B
-        Direction1();
+        leftToRightIfTrue = false;
+        EyeForward.SetActive(false);
+        EyeRight.SetActive(false);
+        EyeBack.SetActive(false);
+        EyeLeft.SetActive(true);
+
+        DirectionForward.SetActive(false);
+        DirectionForwardFade.SetActive(true);
+        DirectionRight.SetActive(false);
+        DirectionRightFade.SetActive(false);
+        DirectionBack.SetActive(false);
+        DirectionBackFade.SetActive(true);
+        DirectionLeft.SetActive(false);
+        DirectionLeftFade.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && leftToRightIfTrue)
         {
             DirectionForward.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetKeyUp(KeyCode.W) && leftToRightIfTrue)
         {
             DirectionForward.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && !leftToRightIfTrue)
         {
             DirectionLeft.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) && !leftToRightIfTrue)
         {
             DirectionLeft.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && leftToRightIfTrue)
         {
             DirectionBack.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.S))
+        if (Input.GetKeyUp(KeyCode.S) && leftToRightIfTrue)
         {
             DirectionBack.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && !leftToRightIfTrue)
         {
             DirectionRight.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.D) && !leftToRightIfTrue)
         {
             DirectionRight.SetActive(false);
         }
@@ -79,8 +84,8 @@ public class CamSwitch : MonoBehaviour
 
     public void Direction1()
     {
-        CamManager.SwitchCamera(cam1);
-        transform.position = gate1.transform.position;
+        //CamManager.SwitchCamera(cam1);
+        leftToRightIfTrue = false;
 
         EyeForward.SetActive(false);
         EyeRight.SetActive(false);
@@ -99,8 +104,8 @@ public class CamSwitch : MonoBehaviour
 
     public void Direction2()
     {
-        CamManager.SwitchCamera(cam2);
-        transform.position = gate2.transform.position;
+        //CamManager.SwitchCamera(cam2);
+        leftToRightIfTrue = true;
 
         EyeForward.SetActive(false);
         EyeRight.SetActive(false);
@@ -119,8 +124,8 @@ public class CamSwitch : MonoBehaviour
 
     public void Direction3()
     {
-        CamManager.SwitchCamera(cam3);
-        transform.position = gate3.transform.position;
+        //CamManager.SwitchCamera(cam3);
+        leftToRightIfTrue = false;
 
         EyeForward.SetActive(false);
         EyeRight.SetActive(true);
@@ -139,8 +144,8 @@ public class CamSwitch : MonoBehaviour
 
     public void Direction4()
     {
-        CamManager.SwitchCamera(cam4);
-        transform.position = gate4.transform.position;
+        //CamManager.SwitchCamera(cam4);
+        leftToRightIfTrue = true;
 
         EyeForward.SetActive(true);
         EyeRight.SetActive(false);
@@ -153,6 +158,25 @@ public class CamSwitch : MonoBehaviour
         DirectionRightFade.SetActive(true);
         DirectionBack.SetActive(false);
         DirectionBackFade.SetActive(false);
+        DirectionLeft.SetActive(false);
+        DirectionLeftFade.SetActive(true);
+    }
+
+    public void ChibiHall()
+    {
+        //CamManager.SwitchCamera(cam4);
+
+        EyeForward.SetActive(false);
+        EyeRight.SetActive(false);
+        EyeBack.SetActive(false);
+        EyeLeft.SetActive(false);
+
+        DirectionForward.SetActive(false);
+        DirectionForwardFade.SetActive(true);
+        DirectionRight.SetActive(false);
+        DirectionRightFade.SetActive(true);
+        DirectionBack.SetActive(false);
+        DirectionBackFade.SetActive(true);
         DirectionLeft.SetActive(false);
         DirectionLeftFade.SetActive(true);
     }

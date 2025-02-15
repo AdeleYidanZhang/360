@@ -8,12 +8,6 @@ public class Interactible : MonoBehaviour
     public bool inRange;
     public UnityEvent interactAction;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -32,6 +26,7 @@ public class Interactible : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inRange = true;
+            Debug.Log("You can open the door");
         }
     }
 
@@ -40,6 +35,7 @@ public class Interactible : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inRange = false;
+            Debug.Log("You can't open the door");
         }
     }
 }
