@@ -13,7 +13,7 @@ public class CentralProcessing : MonoBehaviour
     public PlayerChange PlayerPawns;
     public CamSwitch VisualPawns;
 
-    void Awake()
+    public void Awake()
     {
         PlayerPawns.PlayerHall.enabled = true;
         PlayerPawns.PlayerChibi.enabled = false;
