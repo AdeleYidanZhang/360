@@ -1640,6 +1640,7 @@ Transform:
   - {fileID: 7158343053698886373}
   - {fileID: 21717879309915445}
   - {fileID: 1145292346139903761}
+  - {fileID: 5451439835719215392}
   - {fileID: 7836893896515752456}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2442,4 +2443,70 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7165006778688544490, guid: 39e9862c4fb79a2438d030425b04bc87, type: 3}
   m_PrefabInstance: {fileID: 1129570962438655202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2197768844732244003
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3099698430972407025}
+    m_Modifications:
+    - target: {fileID: 646690129289792872, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: field of view
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992666908628221474, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+      propertyPath: m_Name
+      value: Chibi Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+--- !u!4 &5451439835719215392 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6135992569657198851, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+  m_PrefabInstance: {fileID: 2197768844732244003}
   m_PrefabAsset: {fileID: 0}
