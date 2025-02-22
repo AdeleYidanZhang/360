@@ -7,6 +7,8 @@ public class CentralProcessing : MonoBehaviour
     public PlayerChange PlayerPawns;
     public CamSwitch VisualPawns;
 
+    public void Awake()
+=======
     public Interactible gate1To2;
     public Interactible gate2To1;
     public Interactible gate2ToRoom;
