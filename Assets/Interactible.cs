@@ -13,8 +13,8 @@ public class Interactible : MonoBehaviour
     {
         if (inRange && Input.GetKeyDown(KeyCode.E))
         {
-            interactAction.Invoke();
-            Debug.Log("Player is moving on");
+            interactAction.Invoke(); 
+            Debug.Log("Interacting");
         } else if (!inRange && Input.GetKeyDown(KeyCode.E)) 
         { 
             Debug.Log("You're not doing anything");

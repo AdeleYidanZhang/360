@@ -12,19 +12,17 @@ public class PlayerChange : MonoBehaviour
     public CinemachineVirtualCamera cameraHall;
     public CinemachineVirtualCamera cameraChibi;
 
-    public void hallToChibi()
+    public void chibiPlayerActive()
     {
         PlayerHall.enabled = false;
         PlayerChibi.enabled = true;
-        cameraChibi.enabled = true;
-        cameraHall.enabled = false;
+        CamManager.SwitchCamera(cameraChibi);
     }
 
-    public void chibiToHall()
+    public void hallwayPlayerActive()
     {
         PlayerHall.enabled = true;
         PlayerChibi.enabled = false;
-        cameraChibi.enabled = false;
-        cameraHall.enabled = true;
+        CamManager.SwitchCamera(cameraHall);
     }
 }

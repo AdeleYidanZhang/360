@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4175945ec81b894b994f5ee54dbda0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHall: {fileID: 0}
-  PlayerChibi: {fileID: 0}
+  PlayerHall: {fileID: 8526719241899968035, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
+  PlayerChibi: {fileID: 7818146350166479341, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
   cameraHall: {fileID: 0}
   cameraChibi: {fileID: 0}
 --- !u!114 &5240621127996432321
@@ -91,5 +91,5 @@ MonoBehaviour:
   gate3: {fileID: 0}
   gate4: {fileID: 0}
   chibiGate: {fileID: 0}
-  PlayerPawns: {fileID: 0}
-  VisualPawns: {fileID: 0}
+  PlayerPawns: {fileID: 5664174861271182205}
+  VisualPawns: {fileID: 1586150642149065607}
