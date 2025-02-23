@@ -23,11 +23,13 @@ public class CamSwitch : MonoBehaviour
     public GameObject DirectionLeftFade;
 
     private bool leftToRightIfTrue;
+    private bool mainMenuIfTrue;
 
     void Start()
     {
         // Start Forward Facing Perspecting. So F and B
         leftToRightIfTrue = false;
+        mainMenuIfTrue = true;
         EyeForward.SetActive(false);
         EyeRight.SetActive(false);
         EyeBack.SetActive(false);
@@ -45,38 +47,38 @@ public class CamSwitch : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && leftToRightIfTrue)
+        if (Input.GetKeyDown(KeyCode.W) && leftToRightIfTrue && !mainMenuIfTrue)
         {
             DirectionForward.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.W) && leftToRightIfTrue)
+        if (Input.GetKeyUp(KeyCode.W) && leftToRightIfTrue && !mainMenuIfTrue)
         {
             DirectionForward.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && !leftToRightIfTrue)
+        if (Input.GetKeyDown(KeyCode.A) && !leftToRightIfTrue && !mainMenuIfTrue)
         {
             DirectionLeft.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.A) && !leftToRightIfTrue)
+        if (Input.GetKeyUp(KeyCode.A) && !leftToRightIfTrue && !mainMenuIfTrue)
         {
             DirectionLeft.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && leftToRightIfTrue)
+        if (Input.GetKeyDown(KeyCode.S) && leftToRightIfTrue && !mainMenuIfTrue)
         {
             DirectionBack.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.S) && leftToRightIfTrue)
+        if (Input.GetKeyUp(KeyCode.S) && leftToRightIfTrue && !mainMenuIfTrue)
         {
             DirectionBack.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && !leftToRightIfTrue)
+        if (Input.GetKeyDown(KeyCode.D) && !leftToRightIfTrue && !mainMenuIfTrue)
         {
             DirectionRight.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.D) && !leftToRightIfTrue)
+        if (Input.GetKeyUp(KeyCode.D) && !leftToRightIfTrue && !mainMenuIfTrue)
         {
             DirectionRight.SetActive(false);
         }
@@ -86,6 +88,7 @@ public class CamSwitch : MonoBehaviour
     {
         //CamManager.SwitchCamera(cam1);
         leftToRightIfTrue = false;
+        mainMenuIfTrue = false;
 
         EyeForward.SetActive(false);
         EyeRight.SetActive(false);
@@ -106,6 +109,7 @@ public class CamSwitch : MonoBehaviour
     {
         //CamManager.SwitchCamera(cam2);
         leftToRightIfTrue = true;
+        mainMenuIfTrue = false;
 
         EyeForward.SetActive(false);
         EyeRight.SetActive(false);
@@ -126,6 +130,7 @@ public class CamSwitch : MonoBehaviour
     {
         //CamManager.SwitchCamera(cam3);
         leftToRightIfTrue = false;
+        mainMenuIfTrue = false;
 
         EyeForward.SetActive(false);
         EyeRight.SetActive(true);
@@ -146,6 +151,7 @@ public class CamSwitch : MonoBehaviour
     {
         //CamManager.SwitchCamera(cam4);
         leftToRightIfTrue = true;
+        mainMenuIfTrue = false;
 
         EyeForward.SetActive(true);
         EyeRight.SetActive(false);
@@ -165,6 +171,7 @@ public class CamSwitch : MonoBehaviour
     public void ChibiHall()
     {
         //CamManager.SwitchCamera(cam4);
+        mainMenuIfTrue = false;
 
         EyeForward.SetActive(false);
         EyeRight.SetActive(false);
@@ -179,5 +186,24 @@ public class CamSwitch : MonoBehaviour
         DirectionBackFade.SetActive(true);
         DirectionLeft.SetActive(false);
         DirectionLeftFade.SetActive(true);
+    }
+
+    public void MainMenu()
+    {
+        mainMenuIfTrue = true;
+
+        EyeForward.SetActive(false);
+        EyeRight.SetActive(false);
+        EyeBack.SetActive(false);
+        EyeLeft.SetActive(false);
+
+        DirectionForward.SetActive(false);
+        DirectionForwardFade.SetActive(false);
+        DirectionRight.SetActive(false);
+        DirectionRightFade.SetActive(false);
+        DirectionBack.SetActive(false);
+        DirectionBackFade.SetActive(false);
+        DirectionLeft.SetActive(false);
+        DirectionLeftFade.SetActive(false);
     }
 }

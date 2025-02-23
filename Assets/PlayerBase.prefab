@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841566845733033030}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.5, y: -12.7, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.62, y: 0.62, z: 0.62}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1363867365
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 20add17f25cc537459792214f39b909e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e31620622f9f6469c9bf2c7a6afa11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 5076925815410562386}
 --- !u!61 &8354089436276736270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,8 +186,6 @@ GameObject:
   - component: {fileID: 8119933138171097027}
   - component: {fileID: 7869775554429827687}
   - component: {fileID: 3537576595406093501}
-  - component: {fileID: 7331755701934719788}
-  - component: {fileID: 8931042805807573383}
   m_Layer: 0
   m_Name: HallCam
   m_TagString: Untagged
@@ -334,34 +333,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &7331755701934719788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253666169602728686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ffd2d53290fedc4f9767312ce76c082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8931042805807573383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253666169602728686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 0}
-  m_Damping: 0.5
-  m_MaxWindowSize: -1
-  m_Padding: 0
 --- !u!1 &5630789673197507821
 GameObject:
   m_ObjectHideFlags: 0

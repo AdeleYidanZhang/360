@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class HallwayPlayerMovement : MonoBehaviour
 {
     private float horizontal;
     private float speed = 8f;
     private bool isFacingRight = false;
-    private Rigidbody2D rb;
-
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    public Rigidbody2D rb;
 
     // Update is called once per frame
     void Update()

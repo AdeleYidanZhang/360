@@ -15,10 +15,7 @@ public class Interactible : MonoBehaviour
         {
             interactAction.Invoke(); 
             Debug.Log("Interacting");
-        } else if (!inRange && Input.GetKeyDown(KeyCode.E)) 
-        { 
-            Debug.Log("You're not doing anything");
-        }
+        }   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
