@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour, IDropHandler
+public class ItemSlotTutorial : MonoBehaviour, IDropHandler
 {
+    public SceneDirector director;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -12,7 +13,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         if(eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-
+            director.EnterHallway();
         }
     }
 }

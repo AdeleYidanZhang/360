@@ -30,7 +30,7 @@ public class CentralProcessing : MonoBehaviour
 
     public void roomSetting()
     {
-        PlayerPawns.hallwayPlayerActive();
+        PlayerPawns.chibiPlayerActive();
         VisualPawns.ChibiHall();
     }
 }

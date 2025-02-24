@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MasterInstance : MonoBehaviour
 {
-
     public CentralProcessing CPU;
     public Animator transitionAnimator;
+    private Scene currentSet;
+
+    public HallwayPlayerMovement hallPlayerClone;
+    public TopDownPlayerMovement roomPlayerClone;
 
     #region Instance Manager
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -38,51 +41,70 @@ public class MasterInstance : MonoBehaviour
         }
 
         Instance = this;
-
         DontDestroyOnLoad(Instance);
+        currentSet = SceneManager.GetActiveScene();
     }
 
     #endregion Instance Manager
 
-    void Start()
+    public void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Opening")
-        {
-            Instantiate(CPU.PlayerPawns.PlayerHall);
-        }
+        SceneManager.activeSceneChanged += ChangedActiveScene;
 
-        if (SceneManager.GetActiveScene().name == "Hallway")
+        if (currentSet.name == "Hallway")
         {
-            Instantiate(CPU.PlayerPawns.PlayerHall);
+            hallPlayerClone = Instantiate(CPU.PlayerPawns.PlayerHall);
             CPU.VisualPawns.Direction1();
         }
 
-        if (SceneManager.GetActiveScene().name == "Room")
+        if (currentSet.name == "Room")
         {
-            Instantiate(CPU.PlayerPawns.PlayerChibi);
+            roomPlayerClone = Instantiate(CPU.PlayerPawns.PlayerChibi);
             CPU.VisualPawns.ChibiHall();
         }
     }
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Opening")
+        if (currentSet.name == "FlipsideOpening")
         {
             CPU.VisualPawns.MainMenu();
             transitionAnimator.SetTrigger("End");
         }
 
-        if (SceneManager.GetActiveScene().name == "Hallway")
+        if (currentSet.name == "Hallway")
         {
             CPU.VisualPawns.Direction1();
             transitionAnimator.SetTrigger("End");
         }
 
-        if (SceneManager.GetActiveScene().name == "Room")
+        if (currentSet.name == "Room")
         {
             CPU.VisualPawns.ChibiHall();
             transitionAnimator.SetTrigger("End");
         }
 
+    }
+
+    // Listener for sceneLoaded
+    private void ChangedActiveScene(Scene current, Scene next)
+    {
+        Debug.Log("Scenes: " + current.name + ", " + next.name);
+        if (next.name == "FlipsideOpening")
+        {
+            CPU.VisualPawns.MainMenu();
+        }
+
+        if (next.name == "Hallway")
+        {
+            hallPlayerClone = Instantiate(CPU.PlayerPawns.PlayerHall);
+            CPU.VisualPawns.Direction1();
+        }
+
+        if (next.name == "Room")
+        {
+            roomPlayerClone = Instantiate(CPU.PlayerPawns.PlayerChibi);
+            CPU.VisualPawns.ChibiHall();
+        }
     }
 }
