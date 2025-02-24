@@ -3,16 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FallDetector
+  - NextLevel
+  - PreviousLevel
+  - NextLevel
+  - PreviousLevel
+  - FallDetector
+  - Gate
+  main
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
+  - Interactibles
+  - Players
   - 
   - 
   - 
@@ -38,6 +46,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2925283701
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Walls
+    uniqueID: 1763483039
+    locked: 0
+  - name: Floors
+    uniqueID: 3524392261
+    locked: 0
+  - name: Drywalls
+    uniqueID: 513189005
+    locked: 0
+  - name: Interactibles
+    uniqueID: 229359691
+    locked: 0
+  - name: Players
+    uniqueID: 2931099931
     locked: 0

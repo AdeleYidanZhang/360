@@ -5,7 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Scenes/Tutorial.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Kenneth/FlipsideOpening.unity
+    guid: 2fcc2d16fa37390428f6b5e96b7d413b
+  - enabled: 0
+    path: Assets/Scenes/Level_01.unity
+    guid: 505f463a9998e174eb54882d4687a819
+  - enabled: 0
+    path: Assets/Scenes/Level_02.unity
+    guid: e61b0a53e0afd8d48b869bbdd14fb388
+  - enabled: 0
+    path: Assets/Scenes/Level_03.unity
+    guid: ba88159a7f1d79f499a2990be991f218
+  - enabled: 1
+    path: Assets/Kenneth/Hallway.unity
+    guid: 73eaf5cba66e3e14ca4e834afa70b75d
+  - enabled: 1
+    path: Assets/Kenneth/Room.unity
+    guid: 65ed836e8a236ff40a2ed1b02cefdee4
+  - enabled: 1
+    path: Assets/Kenneth/DevRoom.unity
+    guid: db336a74ae663ba49b807fd9a3181a2b
   m_configObjects: {}
