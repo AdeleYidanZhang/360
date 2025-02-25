@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PuzzleDirector : MonoBehaviour
 {
-
     public ItemValuePuzzle box1;
     public ItemValuePuzzle box2;
     public ItemValuePuzzle box3;
@@ -26,7 +25,6 @@ public class PuzzleDirector : MonoBehaviour
         {
             exitUnlocked = false;
         }
-
 
         PraiseText.SetActive(exitUnlocked);
     }

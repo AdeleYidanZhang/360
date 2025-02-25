@@ -13,6 +13,7 @@ public class DoorControlsRoom : MonoBehaviour
     public SceneDirector director;
     public MasterInstance mainProcess;
     public HallwayPlayerMovement player;
+    public UIManager eyes;
     public string sceneName;
 
     private void Awake()
@@ -23,6 +24,7 @@ public class DoorControlsRoom : MonoBehaviour
 
     void Start()
     {
+        eyes.Direction1();
         mainProcess = (MasterInstance)FindAnyObjectByType(typeof(MasterInstance));
         MasterInstance.loadPersistentLevel();
         player.transform.position = mainProcess.lastPositionHallway;
@@ -36,11 +38,13 @@ public class DoorControlsRoom : MonoBehaviour
     public void FromHall1ToHall2()
     {
         player.transform.position = Floor2Door1.transform.position;
+        eyes.Direction2();
     }
 
     public void FromHall2ToHall1()
     {
         player.transform.position = Floor1Door1.transform.position;
+        eyes.Direction1();
     }
 
     public void FromHall2ToRoom()

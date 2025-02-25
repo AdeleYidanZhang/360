@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MasterInstance : MonoBehaviour
 {
-    public CentralProcessing CPU;
     public Animator transitionAnimator;
-    public Canvas UIScreen;
     private Scene currentSet;
 
     public Vector3 lastPositionHallway;
@@ -52,56 +51,20 @@ public class MasterInstance : MonoBehaviour
     {
         SceneManager.activeSceneChanged += ChangedActiveScene;
         currentSet = SceneManager.GetActiveScene();
-
-        if (currentSet.name == "Hallway")
-        {
-            CPU.hallwaySetting();
-        }
-
-        if (currentSet.name == "Room")
-        {
-            CPU.roomSetting();
-        }
     }
 
     void Update()
     {
         currentSet = SceneManager.GetActiveScene();
-
-        if (currentSet.name == "FlipsideOpening")
-        {
-            CPU.VisualPawns.MainMenu();
-        }
-
-        if (currentSet.name == "Hallway")
-        {
-            CPU.hallwaySetting();
-        }
-
-        if (currentSet.name == "Room")
-        {
-            CPU.roomSetting();
-        }
         transitionAnimator.SetTrigger("End");
+
+        
     }
 
     // Listener for sceneLoaded
     private void ChangedActiveScene(Scene current, Scene next)
     {
         Debug.Log("Scenes: " + current.name + ", " + next.name);
-        if (next.name == "FlipsideOpening")
-        {
-            CPU.VisualPawns.MainMenu();
-        }
-
-        if (next.name == "Hallway")
-        {
-            CPU.hallwaySetting();
-        }
-
-        if (next.name == "Room")
-        {
-            CPU.roomSetting();
-        }
+        
     }
 }

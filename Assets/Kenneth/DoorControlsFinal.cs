@@ -16,6 +16,7 @@ public class DoorControlsFinal : MonoBehaviour
 
     public Canvas puzzle;
     public Canvas ending;
+    public Canvas eyes;
 
     private void Awake()
     {
@@ -41,10 +42,10 @@ public class DoorControlsFinal : MonoBehaviour
 
         if (puzzle.isActiveAndEnabled || ending.isActiveAndEnabled)
         {
-            mainProcess.UIScreen.enabled = false;
+            eyes.enabled = false;
         } else
         {
-            mainProcess.UIScreen.enabled = true;
+            eyes.enabled = true;
         }
     }
 
@@ -69,5 +70,11 @@ public class DoorControlsFinal : MonoBehaviour
         {
             Debug.Log("Door is locked!");
         }
+    }
+
+    public void CloseGame()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }
