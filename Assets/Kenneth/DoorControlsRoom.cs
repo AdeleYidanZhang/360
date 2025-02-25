@@ -12,7 +12,7 @@ public class DoorControlsRoom : MonoBehaviour
 
     public SceneDirector director;
     public MasterInstance mainProcess;
-    public HallwayPlayerMovement player;
+    public HallwayPlayerMovement hallPlayer;
     public UIManager eyes;
     public string sceneName;
 
@@ -27,23 +27,26 @@ public class DoorControlsRoom : MonoBehaviour
         eyes.Direction1();
         mainProcess = (MasterInstance)FindAnyObjectByType(typeof(MasterInstance));
         MasterInstance.loadPersistentLevel();
-        player.transform.position = mainProcess.lastPositionHallway;
+        hallPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("HallPlayerX"), PlayerPrefs.GetFloat("HallPlayerY"), PlayerPrefs.GetFloat("HallPlayerZ"));
+
     }
 
     private void Update()
     {
-        mainProcess.lastPositionHallway = player.transform.position;
+        PlayerPrefs.SetFloat("HallPlayerX", hallPlayer.transform.position.x);
+        PlayerPrefs.SetFloat("HallPlayerY", hallPlayer.transform.position.y);
+        PlayerPrefs.SetFloat("HallPlayerZ", hallPlayer.transform.position.z);
     }
 
     public void FromHall1ToHall2()
     {
-        player.transform.position = Floor2Door1.transform.position;
+        hallPlayer.transform.position = Floor2Door1.transform.position;
         eyes.Direction2();
     }
 
     public void FromHall2ToHall1()
     {
-        player.transform.position = Floor1Door1.transform.position;
+        hallPlayer.transform.position = Floor1Door1.transform.position;
         eyes.Direction1();
     }
 

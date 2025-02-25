@@ -180,9 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 375621128}
-  UIScreen: {fileID: 0}
-  lastPositionHallway: {x: 0, y: 0, z: 0}
-  lastPositionRoom: {x: 0, y: 0, z: 0}
 --- !u!1 &136109351
 GameObject:
   m_ObjectHideFlags: 0

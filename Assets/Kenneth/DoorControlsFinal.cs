@@ -12,7 +12,7 @@ public class DoorControlsFinal : MonoBehaviour
     public MasterInstance mainProcess;
     public PuzzleDirector puzzleMaster;
     public string sceneName;
-    public TopDownPlayerMovement player;
+    public TopDownPlayerMovement roomPlayer;
 
     public Canvas puzzle;
     public Canvas ending;
@@ -28,7 +28,7 @@ public class DoorControlsFinal : MonoBehaviour
     {
         mainProcess = (MasterInstance)FindAnyObjectByType(typeof(MasterInstance));
         MasterInstance.loadPersistentLevel();
-        player.transform.position = mainProcess.lastPositionRoom;
+        roomPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("RoomPlayerX"), PlayerPrefs.GetFloat("RoomPlayerY"), PlayerPrefs.GetFloat("RoomPlayerZ"));
 
         puzzle.enabled = false;
         ending.enabled = false;
@@ -38,7 +38,10 @@ public class DoorControlsFinal : MonoBehaviour
     {
         DoorExit.enabled = puzzleMaster.exitUnlocked;
         //director.positionSaving.Add(sceneName, transform.position);
-        mainProcess.lastPositionRoom = player.transform.position;
+
+        PlayerPrefs.SetFloat("RoomPlayerX", roomPlayer.transform.position.x);
+        PlayerPrefs.SetFloat("RoomPlayerY", roomPlayer.transform.position.y);
+        PlayerPrefs.SetFloat("RoomPlayerZ", roomPlayer.transform.position.z);
 
         if (puzzle.isActiveAndEnabled || ending.isActiveAndEnabled)
         {
@@ -74,7 +77,6 @@ public class DoorControlsFinal : MonoBehaviour
 
     public void CloseGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }

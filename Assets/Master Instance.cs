@@ -9,9 +9,6 @@ public class MasterInstance : MonoBehaviour
     public Animator transitionAnimator;
     private Scene currentSet;
 
-    public Vector3 lastPositionHallway;
-    public Vector3 lastPositionRoom;
-
     #region Instance Manager
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void loadPersistentLevel()

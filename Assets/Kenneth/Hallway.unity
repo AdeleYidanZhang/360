@@ -1559,7 +1559,8 @@ MonoBehaviour:
   Floor2Door2: {fileID: 1591166799}
   director: {fileID: 588263825}
   mainProcess: {fileID: 0}
-  player: {fileID: 1406291758}
+  hallPlayer: {fileID: 1406291758}
+  eyes: {fileID: 325848743}
   sceneName: 
 --- !u!114 &588263825
 MonoBehaviour:
