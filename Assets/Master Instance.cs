@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -36,6 +37,8 @@ public class MasterInstance : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        transitionAnimator = (Animator)FindObjectOfType(typeof(Animator));
 
         Instance = this;
         currentSet = SceneManager.GetActiveScene();

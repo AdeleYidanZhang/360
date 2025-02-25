@@ -21,7 +21,6 @@ public class DoorControlsFinal : MonoBehaviour
     private void Awake()
     {
         sceneName = SceneManager.GetActiveScene().name;
-        director.positionSaving.Add(sceneName, DoorEntrance.transform.position);
     }
 
     void Start()

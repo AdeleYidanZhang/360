@@ -57,7 +57,7 @@ public class UIManager : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.S))
             {
-                DirectionBack.enabled = true;
+                DirectionBack.enabled = false;
             }
         } else if (!leftToRightIfTrue && !inRoom)
         {
@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.S))
             {
-                DirectionBack.enabled = true;
+                DirectionBack.enabled = false;
             }
             if (Input.GetKeyDown(KeyCode.A))
             {

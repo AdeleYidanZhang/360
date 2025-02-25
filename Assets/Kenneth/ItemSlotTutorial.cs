@@ -13,7 +13,7 @@ public class ItemSlotTutorial : MonoBehaviour, IDropHandler
         if(eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            director.EnterHallway();
+            director.StartGame();
         }
     }
 }
