@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorControlsRoom : MonoBehaviour
 {
@@ -11,20 +12,35 @@ public class DoorControlsRoom : MonoBehaviour
 
     public SceneDirector director;
     public MasterInstance mainProcess;
+    public HallwayPlayerMovement player;
+    public string sceneName;
+
+    private void Awake()
+    {
+        sceneName = SceneManager.GetActiveScene().name;
+        director.positionSaving.Add(sceneName, Floor2Door1.transform.position);
+    }
 
     void Start()
     {
         mainProcess = (MasterInstance)FindAnyObjectByType(typeof(MasterInstance));
+        MasterInstance.loadPersistentLevel();
+        player.transform.position = mainProcess.lastPositionHallway;
+    }
+
+    private void Update()
+    {
+        mainProcess.lastPositionHallway = player.transform.position;
     }
 
     public void FromHall1ToHall2()
     {
-        mainProcess.hallPlayerClone.transform.position = Floor2Door1.transform.position;
+        player.transform.position = Floor2Door1.transform.position;
     }
 
     public void FromHall2ToHall1()
     {
-        mainProcess.hallPlayerClone.transform.position = Floor1Door1.transform.position;
+        player.transform.position = Floor1Door1.transform.position;
     }
 
     public void FromHall2ToRoom()

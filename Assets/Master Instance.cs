@@ -7,10 +7,11 @@ public class MasterInstance : MonoBehaviour
 {
     public CentralProcessing CPU;
     public Animator transitionAnimator;
+    public Canvas UIScreen;
     private Scene currentSet;
 
-    public HallwayPlayerMovement hallPlayerClone;
-    public TopDownPlayerMovement roomPlayerClone;
+    public Vector3 lastPositionHallway;
+    public Vector3 lastPositionRoom;
 
     #region Instance Manager
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -41,8 +42,8 @@ public class MasterInstance : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(Instance);
         currentSet = SceneManager.GetActiveScene();
+        DontDestroyOnLoad(Instance);
     }
 
     #endregion Instance Manager
@@ -50,40 +51,38 @@ public class MasterInstance : MonoBehaviour
     public void Start()
     {
         SceneManager.activeSceneChanged += ChangedActiveScene;
+        currentSet = SceneManager.GetActiveScene();
 
         if (currentSet.name == "Hallway")
         {
-            hallPlayerClone = Instantiate(CPU.PlayerPawns.PlayerHall);
-            CPU.VisualPawns.Direction1();
+            CPU.hallwaySetting();
         }
 
         if (currentSet.name == "Room")
         {
-            roomPlayerClone = Instantiate(CPU.PlayerPawns.PlayerChibi);
-            CPU.VisualPawns.ChibiHall();
+            CPU.roomSetting();
         }
     }
 
     void Update()
     {
+        currentSet = SceneManager.GetActiveScene();
+
         if (currentSet.name == "FlipsideOpening")
         {
             CPU.VisualPawns.MainMenu();
-            transitionAnimator.SetTrigger("End");
         }
 
         if (currentSet.name == "Hallway")
         {
-            CPU.VisualPawns.Direction1();
-            transitionAnimator.SetTrigger("End");
+            CPU.hallwaySetting();
         }
 
         if (currentSet.name == "Room")
         {
-            CPU.VisualPawns.ChibiHall();
-            transitionAnimator.SetTrigger("End");
+            CPU.roomSetting();
         }
-
+        transitionAnimator.SetTrigger("End");
     }
 
     // Listener for sceneLoaded
@@ -97,14 +96,12 @@ public class MasterInstance : MonoBehaviour
 
         if (next.name == "Hallway")
         {
-            hallPlayerClone = Instantiate(CPU.PlayerPawns.PlayerHall);
-            CPU.VisualPawns.Direction1();
+            CPU.hallwaySetting();
         }
 
         if (next.name == "Room")
         {
-            roomPlayerClone = Instantiate(CPU.PlayerPawns.PlayerChibi);
-            CPU.VisualPawns.ChibiHall();
+            CPU.roomSetting();
         }
     }
 }

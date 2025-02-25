@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneDirector : MonoBehaviour
 {
+    public Dictionary<string, Vector3> positionSaving = new ();
+
     public void StartGame()
     {
         SceneManager.LoadScene("Hallway");

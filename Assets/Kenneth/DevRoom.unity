@@ -209,7 +209,6 @@ GameObject:
   - component: {fileID: 45330655}
   - component: {fileID: 45330654}
   - component: {fileID: 45330653}
-  - component: {fileID: 45330652}
   - component: {fileID: 45330651}
   m_Layer: 0
   m_Name: GameInstance
@@ -245,24 +244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00ef425ad88d6c469df64f1ff46ed5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPawns: {fileID: 45330652}
   VisualPawns: {fileID: 45330654}
   levelChange: {fileID: 45330653}
-  RoomIfFalse: 1
---- !u!114 &45330652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45330648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4175945ec81b894b994f5ee54dbda0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   PlayerHall: {fileID: 8526719241899968035, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
-  PlayerChibi: {fileID: 7818146350166479341, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
+  PlayerRoom: {fileID: 3001461286721873127, guid: 3bad448e1e9c7e24fa215c489e6b96f2, type: 3}
 --- !u!114 &45330653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +298,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CPU: {fileID: 45330651}
   transitionAnimator: {fileID: 375621128}
-  overlayingCanvas: {fileID: 136109351}
+  UIScreen: {fileID: 1975166246}
+  hallPlayerClone: {fileID: 0}
+  roomPlayerClone: {fileID: 0}
 --- !u!1 &81626182
 GameObject:
   m_ObjectHideFlags: 0
