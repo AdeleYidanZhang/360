@@ -18,6 +18,7 @@ public class DragAndDropPuzzle : MonoBehaviour, IPointerDownHandler, IBeginDragH
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag");
