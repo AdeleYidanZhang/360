@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     bool isFacingRight = false;
 
     Rigidbody2D rb;
+    Animator animator;
 
     private Vector3 respawnPoint; //store player position;
     public GameObject fallDetector;
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         respawnPoint = transform.position;//initial position of player;
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,6 +40,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+
+        animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+
     }
 
     void FlipSprite()//Flip the sprite
