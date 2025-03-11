@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class ClockPuzzleMaster : MonoBehaviour
@@ -7,8 +9,11 @@ public class ClockPuzzleMaster : MonoBehaviour
     public ClockPuzzleMinute minuteHand;
     public ClockPuzzleHour hourHand;
 
+    public Canvas puzzleHint;
+
     private float minuteHandPos;
     private float hourHandPos;
+    public int closetDoor;
 
     public GameObject winText;
 
@@ -18,7 +23,8 @@ public class ClockPuzzleMaster : MonoBehaviour
         winText.SetActive(false);
         minuteHand.notWonYet = true;
         hourHand.notWonYet = true;
-
+        puzzleHint.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("closetDoorLock", 1); // 1 is locked, 0 is unlocked
     }
 
     // Update is called once per frame
@@ -42,6 +48,19 @@ public class ClockPuzzleMaster : MonoBehaviour
         if (!hourHand.notWonYet && !minuteHand.notWonYet)
         {
             winText.SetActive(true);
+            PlayerPrefs.SetInt("closetDoorLock", 0);
         }
+    }
+
+    public void ClosePuzzle()
+    {
+        puzzleHint.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+    }
+
+    public void OpenPuzzle()
+    {
+        puzzleHint.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 }

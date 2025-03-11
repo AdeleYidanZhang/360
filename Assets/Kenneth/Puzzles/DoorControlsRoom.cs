@@ -62,4 +62,30 @@ public class DoorControlsRoom : MonoBehaviour
         
         director.EnterRoom();
     }
+
+    public void FromDemoEndToLivingRoom()
+    {
+        PlayerPrefs.SetFloat("RoomPlayerX", -60f);
+        PlayerPrefs.SetFloat("RoomPlayerY", -85f);
+        PlayerPrefs.SetFloat("RoomPlayerZ", 0f);
+
+        PlayerPrefs.SetFloat("RoomCameraLocationX", 0f);
+        PlayerPrefs.SetFloat("RoomCameraLocationY", -100f);
+        PlayerPrefs.SetFloat("RoomCameraLocationZ", -100f);
+
+        director.EnterRoom();
+    }
+
+    public void DemoEnd()
+    {
+        if (PlayerPrefs.GetInt("demoDoorLock") == 0)
+        {
+            CloseGame();
+        }
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }

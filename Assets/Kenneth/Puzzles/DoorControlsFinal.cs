@@ -12,12 +12,15 @@ public class DoorControlsFinal : MonoBehaviour
     public string sceneName;
     public TopDownPlayerMovement roomPlayer;
 
+    public GameObject puzzleClock;
+
     public Canvas ending;
     public Canvas eyes;
 
     private void Awake()
     {
         sceneName = SceneManager.GetActiveScene().name;
+        puzzleClock.SetActive(true);
     }
 
     void Start()
@@ -50,6 +53,24 @@ public class DoorControlsFinal : MonoBehaviour
         PlayerPrefs.SetFloat("HallCameraLocationZ", -30f);
 
         director.EnterHallway();
+    }
+
+    public void FromLivingRoomToDemoEnd()
+    {
+        PlayerPrefs.SetFloat("HallPlayerX", 30f);
+        PlayerPrefs.SetFloat("HallPlayerY", -55f);
+        PlayerPrefs.SetFloat("HallPlayerZ", 0f);
+
+        PlayerPrefs.SetFloat("HallCameraLocationX", 0f);
+        PlayerPrefs.SetFloat("HallCameraLocationY", -50f);
+        PlayerPrefs.SetFloat("HallCameraLocationZ", -30f);
+
+        director.EnterHallway();
+    }
+
+    public void OpenClockPuzzle()
+    {
+        puzzleClock.SetActive(true);
     }
 
     public void CloseGame()

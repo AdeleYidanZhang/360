@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Kenneth/FlipsideOpening.unity
     guid: 2fcc2d16fa37390428f6b5e96b7d413b
   - enabled: 0
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Level_03.unity
     guid: ba88159a7f1d79f499a2990be991f218
+  - enabled: 1
+    path: Assets/Andressa/Scenes/Main_Menu.unity
+    guid: d45edb9ebbce8c749b6d83bb62ed78c3
   - enabled: 1
     path: Assets/Kenneth/Hallway.unity
     guid: 73eaf5cba66e3e14ca4e834afa70b75d

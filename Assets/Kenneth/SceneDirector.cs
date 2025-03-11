@@ -25,6 +25,8 @@ public class SceneDirector : MonoBehaviour
         PlayerPrefs.SetFloat("RoomCameraLocationZ", -100f);
 
         PlayerPrefs.SetInt("DirectionCoordiator", 2);
+
+        PlayerPrefs.SetInt("closetDoorLock", 1);
     }
 
     public void EnterHallway()
