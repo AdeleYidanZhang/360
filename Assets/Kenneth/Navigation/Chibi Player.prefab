@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 8435373233668996223}
+  interactingWithScreen: 0
 --- !u!50 &4021331431407259130
 Rigidbody2D:
   serializedVersion: 4

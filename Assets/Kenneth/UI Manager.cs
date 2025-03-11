@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
 
     private bool leftToRightIfTrue;
     private bool inRoom;
+    public int director;
 
     // Start is called before the first frame update
     void Start()
@@ -41,80 +42,102 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        director = PlayerPrefs.GetInt("DirectionCoordiator");
+        HallwayDirectionCoordinator(director);
+
         if (leftToRightIfTrue && !inRoom)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                DirectionForward.enabled = true;
+                DirectionForward.SetEnabled(true);
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
-                DirectionForward.enabled = false;
+                DirectionForward.SetEnabled(false);
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    DirectionBack.SetEnabled(true);
+                }
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    DirectionBack.SetEnabled(false);
+                }
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            else if (!leftToRightIfTrue && !inRoom)
             {
-                DirectionBack.enabled = true;
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    DirectionLeft.SetEnabled(true);
+                }
+                if (Input.GetKeyUp(KeyCode.A))
+                {
+                    DirectionLeft.SetEnabled(false);
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    DirectionRight.SetEnabled(true);
+                }
+                if (Input.GetKeyUp(KeyCode.D))
+                {
+                    DirectionRight.SetEnabled(false);
+                }
             }
-            if (Input.GetKeyUp(KeyCode.S))
+            else if (inRoom)
             {
-                DirectionBack.enabled = false;
-            }
-        } else if (!leftToRightIfTrue && !inRoom)
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                DirectionLeft.enabled = true;
-            }
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                DirectionLeft.enabled = false;
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                DirectionRight.enabled = true;
-            }
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                DirectionRight.enabled = false;
-            }
-        } else if (inRoom)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                DirectionForward.enabled = true;
-            }
-            if (Input.GetKeyUp(KeyCode.W))
-            {
-                DirectionForward.enabled = false;
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                DirectionBack.enabled = true;
-            }
-            if (Input.GetKeyUp(KeyCode.S))
-            {
-                DirectionBack.enabled = false;
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                DirectionLeft.enabled = true;
-            }
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                DirectionLeft.enabled = false;
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                DirectionRight.enabled = true;
-            }
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                DirectionRight.enabled = false;
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    DirectionForward.SetEnabled(true);
+                }
+                if (Input.GetKeyUp(KeyCode.W))
+                {
+                    DirectionForward.SetEnabled(false);
+                }
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    DirectionBack.SetEnabled(true);
+                }
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    DirectionBack.SetEnabled(false);
+                }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    DirectionLeft.SetEnabled(true);
+                }
+                if (Input.GetKeyUp(KeyCode.A))
+                {
+                    DirectionLeft.SetEnabled(false);
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    DirectionRight.SetEnabled(true);
+                }
+                if (Input.GetKeyUp(KeyCode.D))
+                {
+                    DirectionRight.SetEnabled(false);
+                }
             }
         }
+    }
 
-
-        
+    public void HallwayDirectionCoordinator(int direction)
+    {
+        if (direction == 1)
+        {
+            Direction1();
+        }
+        if (direction == 2)
+        {
+            Direction2();
+        }
+        if (direction == 3)
+        {
+            Direction3();
+        }
+        if (direction == 4)
+        {
+            Direction4();
+        }
     }
 
     public void Direction1()
@@ -122,19 +145,20 @@ public class UIManager : MonoBehaviour
         leftToRightIfTrue = true;
         inRoom = false;
 
-        EyeForward.enabled = false;
-        EyeRight.enabled = false;
-        EyeBack.enabled = false;
-        EyeLeft.enabled = true;
 
-        DirectionForward.enabled = false;
-        DirectionForwardFade.enabled = true;
-        DirectionRight.enabled = false;
-        DirectionRightFade.enabled = false;
-        DirectionBack.enabled = false;
-        DirectionBackFade.enabled = true;
-        DirectionLeft.enabled = false;
-        DirectionLeftFade.enabled = false;
+        EyeForward.SetEnabled(false);
+        EyeRight.SetEnabled(false);
+        EyeBack.SetEnabled(false);
+        EyeLeft.SetEnabled(true);
+
+        DirectionForward.SetEnabled(false);
+        DirectionForwardFade.SetEnabled(true);
+        DirectionRight.SetEnabled(false);
+        DirectionRightFade.SetEnabled(false);
+        DirectionBack.SetEnabled(false);
+        DirectionBackFade.SetEnabled(true);
+        DirectionLeft.SetEnabled(false);
+        DirectionLeftFade.SetEnabled(false);
     }
 
     public void Direction2()
@@ -142,19 +166,19 @@ public class UIManager : MonoBehaviour
         leftToRightIfTrue = false;
         inRoom = false;
 
-        EyeForward.enabled = false;
-        EyeRight.enabled = false;
-        EyeBack.enabled = true;
-        EyeLeft.enabled = false;
+        EyeForward.SetEnabled(false);
+        EyeRight.SetEnabled(false);
+        EyeBack.SetEnabled(true);
+        EyeLeft.SetEnabled(false);
 
-        DirectionForward.enabled = false;
-        DirectionForwardFade.enabled = false;
-        DirectionRight.enabled = false;
-        DirectionRightFade.enabled = true;
-        DirectionBack.enabled = false;
-        DirectionBackFade.enabled = false;
-        DirectionLeft.enabled = false;
-        DirectionLeftFade.enabled = true;
+        DirectionForward.SetEnabled(false);
+        DirectionForwardFade.SetEnabled(false);
+        DirectionRight.SetEnabled(false);
+        DirectionRightFade.SetEnabled(true);
+        DirectionBack.SetEnabled(false);
+        DirectionBackFade.SetEnabled(false);
+        DirectionLeft.SetEnabled(false);
+        DirectionLeftFade.SetEnabled(true);
     }
 
     public void Direction3()
@@ -162,19 +186,19 @@ public class UIManager : MonoBehaviour
         leftToRightIfTrue = false;
         inRoom = false;
 
-        EyeForward.enabled = false;
-        EyeRight.enabled = true;
-        EyeBack.enabled = false;
-        EyeLeft.enabled = false;
+        EyeForward.SetEnabled(false);
+        EyeRight.SetEnabled(true);
+        EyeBack.SetEnabled(false);
+        EyeLeft.SetEnabled(false);
 
-        DirectionForward.enabled = false;
-        DirectionForwardFade.enabled = true;
-        DirectionRight.enabled = false;
-        DirectionRightFade.enabled = false;
-        DirectionBack.enabled = false;
-        DirectionBackFade.enabled = true;
-        DirectionLeft.enabled = false;
-        DirectionLeftFade.enabled = false;
+        DirectionForward.SetEnabled(false);
+        DirectionForwardFade.SetEnabled(true);
+        DirectionRight.SetEnabled(false);
+        DirectionRightFade.SetEnabled(false);
+        DirectionBack.SetEnabled(false);
+        DirectionBackFade.SetEnabled(true);
+        DirectionLeft.SetEnabled(false);
+        DirectionLeftFade.SetEnabled(false);
     }
 
     public void Direction4()
@@ -182,19 +206,20 @@ public class UIManager : MonoBehaviour
         leftToRightIfTrue = true;
         inRoom = false;
 
-        EyeForward.enabled = true;
-        EyeRight.enabled = false;
-        EyeBack.enabled = false;
-        EyeLeft.enabled = false;
 
-        DirectionForward.enabled = false;
-        DirectionForwardFade.enabled = false;
-        DirectionRight.enabled = false;
-        DirectionRightFade.enabled = true;
-        DirectionBack.enabled = false;
-        DirectionBackFade.enabled = false;
-        DirectionLeft.enabled = false;
-        DirectionLeftFade.enabled = true;
+        EyeForward.SetEnabled(true);
+        EyeRight.SetEnabled(false);
+        EyeBack.SetEnabled(false);
+        EyeLeft.SetEnabled(false);
+
+        DirectionForward.SetEnabled(false);
+        DirectionForwardFade.SetEnabled(false);
+        DirectionRight.SetEnabled(false);
+        DirectionRightFade.SetEnabled(true);
+        DirectionBack.SetEnabled(false);
+        DirectionBackFade.SetEnabled(false);
+        DirectionLeft.SetEnabled(false);
+        DirectionLeftFade.SetEnabled(true);
     }
 
     public void ChibiHall()
@@ -202,18 +227,18 @@ public class UIManager : MonoBehaviour
         leftToRightIfTrue = false;
         inRoom = true;
 
-        EyeForward.enabled = false;
-        EyeRight.enabled = false;
-        EyeBack.enabled = false;
-        EyeLeft.enabled = false;
+        EyeForward.SetEnabled(false);
+        EyeRight.SetEnabled(false);
+        EyeBack.SetEnabled(false);
+        EyeLeft.SetEnabled(false);
 
-        DirectionForward.enabled = false;
-        DirectionForwardFade.enabled = true;
-        DirectionRight.enabled = false;
-        DirectionRightFade.enabled = true;
-        DirectionBack.enabled = false;
-        DirectionBackFade.enabled = true;
-        DirectionLeft.enabled = false;
-        DirectionLeftFade.enabled = true;
+        DirectionForward.SetEnabled(false);
+        DirectionForwardFade.SetEnabled(true);
+        DirectionRight.SetEnabled(false);
+        DirectionRightFade.SetEnabled(true);
+        DirectionBack.SetEnabled(false);
+        DirectionBackFade.SetEnabled(true);
+        DirectionLeft.SetEnabled(false);
+        DirectionLeftFade.SetEnabled(true);
     }
 }
