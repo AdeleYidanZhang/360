@@ -39,7 +39,6 @@ public class Interaction_Dialogue : MonoBehaviour
         }
     }
 
-
     public void zeroText()//reset dialogue;
     {
 
