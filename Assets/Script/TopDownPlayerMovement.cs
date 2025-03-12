@@ -2,47 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class TopDownPlayerMovement : MonoBehaviour
 {
 
-    private float speed = 288f; 
-    private Vector2 movement; 
-    private Rigidbody2D rb;
-    private Animator animator;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-    }
-
+    public float moveSpeed = 288f; 
+    public Rigidbody2D rb;
+    public Animator animator;
+    Vector2 movement;
+    
     // Update is called once per frame
     void Update()
     {
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
 
     }
 
-    public void Move(InputAction.CallbackContext context)
+    private void FixedUpdate()
     {
 
-        animator.SetBool("isWalking", true);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if(context.canceled)
-        {
-            animator.SetBool("isWalking", false);
-            animator.SetFloat("LastInputX", movement.x);
-            animator.SetFloat("LastInputY", movement.x);
-        }
-
-        movement = context.ReadValue<Vector2>();
-        animator.SetFloat("InputX", movement.x);
-        animator.SetFloat("InputY", movement.y);
     }
 
 }
