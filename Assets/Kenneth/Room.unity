@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Telephone Station
   Dialogue: {fileID: 11400000, guid: b5e6865135de55f42a54860abf08b827, type: 2}
+  UI: {fileID: 0}
 --- !u!1 &20920569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,6 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Closet Door
   Dialogue: {fileID: 11400000, guid: 963564eac2661754f8c2a90d635eb02d, type: 2}
+  UI: {fileID: 0}
 --- !u!1 &111480684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,7 +1089,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 164106949}
-  - component: {fileID: 164106951}
   - component: {fileID: 164106950}
   m_Layer: 0
   m_Name: Clock
@@ -1095,7 +1096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &164106949
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,12 +1106,12 @@ Transform:
   m_GameObject: {fileID: 164106948}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -100, z: 0}
+  m_LocalPosition: {x: 250, y: -100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2086240795}
   - {fileID: 170929944}
+  - {fileID: 2086240795}
   - {fileID: 1242602706}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1126,23 +1127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc59938bcf99c74eb8c97f38a19f981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minuteHand: {fileID: 170929946}
+  minuteHand: {fileID: 170929948}
   hourHand: {fileID: 1242602708}
   puzzleHint: {fileID: 1769763279}
+  eyeUI: {fileID: 1975455696}
   closetDoor: 0
+  roomCam: {fileID: 1217459068}
   winText: {fileID: 185140210}
---- !u!114 &164106951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164106948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a35f9bcedb2fb9d4e8c7ae03770f47c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &170929943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1144,8 @@ GameObject:
   m_Component:
   - component: {fileID: 170929944}
   - component: {fileID: 170929945}
-  - component: {fileID: 170929946}
+  - component: {fileID: 170929947}
+  - component: {fileID: 170929948}
   m_Layer: 0
   m_Name: ClockHandMinute
   m_TagString: Untagged
@@ -1170,7 +1162,7 @@ Transform:
   m_GameObject: {fileID: 170929943}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: -1}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1228,7 +1220,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &170929946
+--- !u!58 &170929947
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170929943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
+--- !u!114 &170929948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1243,6 +1270,7 @@ MonoBehaviour:
   myCam: {fileID: 1217459068}
   notWonYet: 0
   leftClickActive: 0
+  angle: 0
 --- !u!1 &185140210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,10 +1303,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1769763280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -137}
-  m_SizeDelta: {x: -1118, y: -751}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 238.96}
+  m_SizeDelta: {x: 700, y: 177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185140212
 MonoBehaviour:
@@ -1327,8 +1355,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3171,7 +3199,7 @@ Transform:
   m_GameObject: {fileID: 608076230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.2129451, w: 0.9770642}
-  m_LocalPosition: {x: -64.35, y: 21.33, z: 0}
+  m_LocalPosition: {x: -64, y: 28.6, z: 0}
   m_LocalScale: {x: 5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4265,7 +4293,7 @@ GameObject:
   - component: {fileID: 809075660}
   - component: {fileID: 809075659}
   m_Layer: 5
-  m_Name: Main_Menu_Button
+  m_Name: ClosePuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4317,7 +4345,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 164106950}
         m_TargetAssemblyTypeName: ClockPuzzleMaster, Assembly-CSharp
-        m_MethodName: ClosePuzzleHint
+        m_MethodName: ClosePuzzle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4382,7 +4410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -275}
+  m_AnchoredPosition: {x: 0, y: -375}
   m_SizeDelta: {x: 360, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &845870482
@@ -5443,16 +5471,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: interactionPrompt
+      value: 
+      objectReference: {fileID: 1393479920}
+    - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1191037971}
+      objectReference: {fileID: 1191037975}
     - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FromLivingRoomToDemoEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorControlsFinal, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4016661991316904867, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
       propertyPath: m_Name
@@ -6139,6 +6187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Coffee Table
   Dialogue: {fileID: 11400000, guid: 963564eac2661754f8c2a90d635eb02d, type: 2}
+  UI: {fileID: 0}
 --- !u!1 &1180584138
 GameObject:
   m_ObjectHideFlags: 0
@@ -6280,7 +6329,6 @@ GameObject:
   - component: {fileID: 1191037974}
   - component: {fileID: 1191037975}
   - component: {fileID: 1191037972}
-  - component: {fileID: 1191037976}
   - component: {fileID: 1191037977}
   m_Layer: 0
   m_Name: DoorController
@@ -6336,26 +6384,6 @@ MonoBehaviour:
   puzzleClock: {fileID: 0}
   ending: {fileID: 0}
   eyes: {fileID: 1975455696}
---- !u!114 &1191037976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191037971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f7f1196c89c1c4897fcb2e0be9464f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  box1: {fileID: 0}
-  box2: {fileID: 0}
-  box3: {fileID: 0}
-  box4: {fileID: 0}
-  box5: {fileID: 0}
-  puzzleScreen: {fileID: 0}
-  PraiseText: {fileID: 0}
-  exitUnlocked: 0
 --- !u!114 &1191037977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6804,6 +6832,7 @@ GameObject:
   - component: {fileID: 1242602706}
   - component: {fileID: 1242602707}
   - component: {fileID: 1242602708}
+  - component: {fileID: 1242602709}
   m_Layer: 0
   m_Name: ClockHandSecond
   m_TagString: Untagged
@@ -6819,13 +6848,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242602705}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9659258, w: 0.2588191}
+  m_LocalPosition: {x: -0.2, y: -0.3, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 164106949}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -150}
 --- !u!212 &1242602707
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6866,7 +6895,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 1a53428da5dce5543afb63c9d8369f8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6893,6 +6922,42 @@ MonoBehaviour:
   myCam: {fileID: 1217459068}
   notWonYet: 0
   rightClickActive: 0
+  angle: 0
+--- !u!58 &1242602709
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242602705}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1001 &1245836005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6903,7 +6968,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 195134354698788981, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: m_Radius
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 195134354698788981, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: m_Offset.x
@@ -7071,9 +7136,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3099698430972407025, guid: b13b8632aade9b741b2f17324963c129, type: 3}
       insertIndex: 17
       addedObject: {fileID: 1980109898}
-    - targetCorrespondingSourceObject: {fileID: 3099698430972407025, guid: b13b8632aade9b741b2f17324963c129, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1640114359}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b13b8632aade9b741b2f17324963c129, type: 3}
 --- !u!4 &1281595489 stripped
@@ -7245,8 +7307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dbddb74fee55f045a40fb3e9fb04a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 30
   rb: {fileID: 1309096592}
+  roomCamera: {fileID: 1217459068}
   animator: {fileID: 1309096594}
 --- !u!95 &1309096594
 Animator:
@@ -8802,7 +8865,7 @@ Transform:
   m_GameObject: {fileID: 1549655622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.9, y: 14.2, z: 0}
+  m_LocalPosition: {x: -72.9, y: 17.1, z: 0}
   m_LocalScale: {x: 0.5, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9298,68 +9361,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615255746}
   m_CullTransparentMesh: 1
---- !u!1001 &1640114358
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1281595489}
-    m_Modifications:
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367178527906152204, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-      propertyPath: m_Name
-      value: Chibi Player 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
---- !u!4 &1640114359 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4334808561178266774, guid: 3d3db2b3e91106b43aa1b6bda5d6aae7, type: 3}
-  m_PrefabInstance: {fileID: 1640114358}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1647045706
 GameObject:
   m_ObjectHideFlags: 0
@@ -9433,7 +9434,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1658d32e8a1754b418292cd8996c2e42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9614,7 +9615,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hint: 04:51'
+  m_text: 'Hint: 04:51
+
+    Left click to rotate the minute hand
+
+    Right click
+    to rotate the hour hand'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0ead7f8ca8977f48b99e0a45f9d93c7, type: 2}
   m_sharedMaterial: {fileID: 7835879793451765199, guid: c0ead7f8ca8977f48b99e0a45f9d93c7, type: 2}
@@ -9705,10 +9711,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1769763280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -195.39996}
-  m_SizeDelta: {x: -1118, y: -751}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 360}
+  m_SizeDelta: {x: 530, y: 177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1767869688
 GameObject:
@@ -10992,7 +10998,7 @@ Transform:
   m_GameObject: {fileID: 2048429284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 8.28, y: 8.28, z: 8.28}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -11071,7 +11077,7 @@ Transform:
   m_GameObject: {fileID: 2086240794}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -11234,7 +11240,7 @@ Transform:
   m_GameObject: {fileID: 2119913194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.2129451, w: 0.9770642}
-  m_LocalPosition: {x: -64.35, y: 4.31, z: 0}
+  m_LocalPosition: {x: -64.35, y: 4.2, z: 0}
   m_LocalScale: {x: 5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

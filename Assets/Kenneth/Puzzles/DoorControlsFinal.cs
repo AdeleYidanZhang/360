@@ -27,8 +27,6 @@ public class DoorControlsFinal : MonoBehaviour
     {
         mainProcess = (MasterInstance)FindAnyObjectByType(typeof(MasterInstance));
         MasterInstance.loadPersistentLevel();
-        roomPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("RoomPlayerX"), PlayerPrefs.GetFloat("RoomPlayerY"), PlayerPrefs.GetFloat("RoomPlayerZ"));
-        roomCam.transform.position = new Vector3(PlayerPrefs.GetFloat("RoomCameraLocationX"), PlayerPrefs.GetFloat("RoomCameraLocationY"), PlayerPrefs.GetFloat("RoomCameraLocationZ"));
     }
 
     private void Update()
@@ -44,8 +42,8 @@ public class DoorControlsFinal : MonoBehaviour
 
     public void FromLivingRoomToEntrace()
     {
-        PlayerPrefs.SetFloat("HallPlayerX", 19.2f);
-        PlayerPrefs.SetFloat("HallPlayerY", 1.03f);
+        PlayerPrefs.SetFloat("HallPlayerX", 20f);
+        PlayerPrefs.SetFloat("HallPlayerY", 1f);
         PlayerPrefs.SetFloat("HallPlayerZ", 0f);
 
         PlayerPrefs.SetFloat("HallCameraLocationX", 0f);

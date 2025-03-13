@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TopDownPlayerMovement : MonoBehaviour
 {
-    public float speed = 8f;
+    public float speed = 24f;
     
     private Vector2 movement;
 
     public Rigidbody2D rb;
-
+    public Camera roomCamera;
     public Animator animator;
 
 
@@ -22,6 +22,12 @@ public class TopDownPlayerMovement : MonoBehaviour
     //    rb = GetComponent<Rigidbody2D>();
     //    gameObject.SetActive(true);
     //}
+
+    private void Start()
+    {
+        transform.position = new Vector3(PlayerPrefs.GetFloat("RoomPlayerX"), PlayerPrefs.GetFloat("RoomPlayerY"), PlayerPrefs.GetFloat("RoomPlayerZ"));
+        roomCamera.transform.position = new Vector3(PlayerPrefs.GetFloat("RoomCameraLocationX"), PlayerPrefs.GetFloat("RoomCameraLocationY"), PlayerPrefs.GetFloat("RoomCameraLocationZ"));
+    }
 
     // Update is called once per frame
     void Update()

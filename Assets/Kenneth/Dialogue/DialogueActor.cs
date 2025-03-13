@@ -5,14 +5,12 @@ public class Actor : MonoBehaviour
     public string Name;
     public Dialogue Dialogue;
 
-    private void Update()
-    {
-
-    }
+    public Canvas UI;
 
     // Trigger dialogue for this actor
     public void SpeakTo()
     {
         DialogueManager.Instance.StartDialogue(Name, Dialogue.RootNode);
+        UI.gameObject.SetActive(false);
     }
 }

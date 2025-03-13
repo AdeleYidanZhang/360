@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class ClockPuzzleMaster : MonoBehaviour
@@ -10,10 +9,10 @@ public class ClockPuzzleMaster : MonoBehaviour
     public ClockPuzzleHour hourHand;
 
     public Canvas puzzleHint;
+    public Canvas eyeUI;
 
-    private float minuteHandPos;
-    private float hourHandPos;
     public int closetDoor;
+    public Camera roomCam;
 
     public GameObject winText;
 
@@ -25,23 +24,24 @@ public class ClockPuzzleMaster : MonoBehaviour
         hourHand.notWonYet = true;
         puzzleHint.gameObject.SetActive(false);
         PlayerPrefs.SetInt("closetDoorLock", 1); // 1 is locked, 0 is unlocked
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update() // NOTE: 12:00 IS 0. 9 IS 90. 6 IS 180. 3 IS -90
     {
-        minuteHandPos = (Mathf.Round(minuteHand.transform.rotation.eulerAngles.z * 2) / 2);
-        hourHandPos = (Mathf.Round(hourHand.transform.rotation.eulerAngles.z * 2) / 2);
 
-        Debug.Log($"Minute Hand: {minuteHandPos}, Hour Hand: {hourHandPos}");
+        Debug.Log($"Minute Hand: {minuteHand.angle}, Hour Hand: {hourHand.angle}");
 
-        if (minuteHandPos == 55f)
+        if (minuteHand.angle >= 50f && minuteHand.angle <= 52f)
         {
+            minuteHand.angle = 51f;
             minuteHand.notWonYet = false;
         }
 
-        if (hourHandPos == 221f)
+        if (hourHand.angle >= -142f && hourHand.angle <= -140f)
         {
+            hourHand.angle = -141f;
             hourHand.notWonYet = false;
         }
 
@@ -56,11 +56,15 @@ public class ClockPuzzleMaster : MonoBehaviour
     {
         puzzleHint.gameObject.SetActive(false);
         gameObject.SetActive(false);
+        roomCam.transform.position = new Vector3(0, -100f, -100);
+        eyeUI.gameObject.SetActive(true);
     }
 
     public void OpenPuzzle()
     {
         puzzleHint.gameObject.SetActive(true);
         gameObject.SetActive(true);
+        roomCam.transform.position = new Vector3(250f, -100f, -100);
+        eyeUI.gameObject.SetActive(false);
     }
 }

@@ -34,8 +34,6 @@ public class DoorControlsRoom : MonoBehaviour
 
         mainProcess = (MasterInstance)FindAnyObjectByType(typeof(MasterInstance));
         MasterInstance.loadPersistentLevel();
-        hallPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("HallPlayerX"), PlayerPrefs.GetFloat("HallPlayerY"), PlayerPrefs.GetFloat("HallPlayerZ"));
-        hallwayCam.transform.position = new Vector3(PlayerPrefs.GetFloat("HallCameraLocationX"), PlayerPrefs.GetFloat("HallCameraLocationY"), PlayerPrefs.GetFloat("HallCameraLocationZ"));
 
     }
 
