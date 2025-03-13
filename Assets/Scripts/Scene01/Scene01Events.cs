@@ -95,7 +95,7 @@ public class Scene01Events : MonoBehaviour
         // event 3
         fadeScreenOut.SetActive(true);
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1); //switch to the mansion scene
     }
 
 
