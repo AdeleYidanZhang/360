@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 195134354698788981}
   m_Layer: 0
   m_Name: InteractibleSphere
-  m_TagString: Untagged
+  m_TagString: InteractionAvailable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,8 @@ MonoBehaviour:
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  interactionPrompt: {fileID: 0}
+  isInteracting: 0
 --- !u!58 &195134354698788981
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -78,7 +80,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
