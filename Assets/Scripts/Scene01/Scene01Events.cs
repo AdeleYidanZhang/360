@@ -22,14 +22,17 @@ public class Scene01Events : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 1)
         {
+            StopCoroutine(EventStarter());
             StartCoroutine(EventOne());
         }
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 2)
         {
+            StopCoroutine(EventOne());
             StartCoroutine(EventTwo());
         }
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 3)
         {
+            StopCoroutine(EventTwo());
             StartCoroutine(EventThree());
         }
     }

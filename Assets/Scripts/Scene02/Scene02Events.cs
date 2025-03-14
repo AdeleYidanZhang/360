@@ -48,18 +48,22 @@ public class Scene02Events : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 1)
         {
+            StopCoroutine(EventStarter());
             StartCoroutine(EventOne());
         }
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 2)
         {
+            StopCoroutine (EventOne());
             StartCoroutine(EventTwo());
         }
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 3)
         {
+            StopCoroutine(EventTwo());
             StartCoroutine(EventThree());
         }
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 4)
         {
+            StopCoroutine(EventThree());
             StartCoroutine(EventFour());
         }
 
@@ -122,6 +126,7 @@ public class Scene02Events : MonoBehaviour
     IEnumerator EventThree()
     {
         //after clicking the NoButton:
+        StopAllCoroutines();
         mainTextObject.SetActive(false);
         eventPos = 0;
         yield return new WaitForSeconds(0.05f);
@@ -136,7 +141,7 @@ public class Scene02Events : MonoBehaviour
     }
 
     public void ClickYesButton()
-    {
+    {   
         StartCoroutine(YesButtonInteract());
 
     }
@@ -149,7 +154,8 @@ public class Scene02Events : MonoBehaviour
     public void ClickOnGate()
     {
         if (textlength == currentTextLength)
-        {
+        {   
+            StopAllCoroutines();
             StartCoroutine(GateInteract());
             gateChecked = true;
         }
@@ -160,6 +166,7 @@ public class Scene02Events : MonoBehaviour
     {
         if (textlength == currentTextLength)
         {
+            StopAllCoroutines();
             StartCoroutine(MansionInteract());
             mansionChecked = true;
         }
@@ -169,6 +176,7 @@ public class Scene02Events : MonoBehaviour
     {
         if (textlength == currentTextLength)
         {
+            StopAllCoroutines();
             StartCoroutine(SkyInteract());
             skyChecked = true;
         }
@@ -179,6 +187,7 @@ public class Scene02Events : MonoBehaviour
     {
         if (textlength == currentTextLength)
         {
+            StopAllCoroutines();
             StartCoroutine(AfarInteract());
             afarChecked = true;
 
@@ -189,7 +198,7 @@ public class Scene02Events : MonoBehaviour
     {   
         yesButton.gameObject.SetActive(false);
         noButton.gameObject.SetActive(false);
-        text = "I should go inside right now.";
+        text = "This mansion seems to carry an inexplicable sense of malevolence, casting a spell on me, compelling me to step deeper in search of something unknown, as if I am sinking into a swamp, unable to escape...";
         textBox.GetComponent<TMPro.TMP_Text>().text = text;
         currentTextLength = text.Length;
         TextCreator.runTextPrint = true;
@@ -212,13 +221,12 @@ public class Scene02Events : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textlength == currentTextLength);
-        eventPos = 3;
-        yield return new WaitForSeconds(0.5f);
         gateInteract.SetActive(true);
         gateInteract2.SetActive(true);
         skyInteract.SetActive(true);
         mansionInteract.SetActive(true);
         afarInteract.SetActive(true);
+        eventPos = 3;
     }
 
     IEnumerator GateInteract()
@@ -241,7 +249,7 @@ public class Scene02Events : MonoBehaviour
         if (mansionChecked && skyChecked && afarChecked && gateChecked)
         {
             mainTextObject.SetActive(true);
-            text = "The surrounding has been inspected. Now, it's time to step inside.";
+            text = "This mansion seems to carry an inexplicable sense of malevolence, casting a spell on me, compelling me to step deeper in search of something unknown, as if I am sinking into a swamp, unable to escape...";
             textBox.GetComponent<TMPro.TMP_Text>().text = text;
             currentTextLength = text.Length;
             TextCreator.runTextPrint = true;
@@ -254,7 +262,7 @@ public class Scene02Events : MonoBehaviour
         else
         {
             mainTextObject.SetActive(true);
-            text = "This mansion...Have I been this place before? Why is it so familiar, but I can't recall nothing at all.";
+            text = "This mansion...I am feeling an indescribable sense of familiarity with this mansion. However, no matter how hard I try to recall, all that remains in my mind is a pounding headache and ringing in my ears.";
             textBox.GetComponent<TMPro.TMP_Text>().text = text;
             currentTextLength = text.Length;
             TextCreator.runTextPrint = true;

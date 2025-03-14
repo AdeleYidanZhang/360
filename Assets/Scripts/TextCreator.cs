@@ -29,6 +29,7 @@ public class TextCreator : MonoBehaviour
 
     IEnumerator RollText()
     {
+        yield return new WaitForSeconds(0.1f);
         foreach (char c in transferText)
         {
             viewText.text += c;
