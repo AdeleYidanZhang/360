@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: ClosetUnlocked
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 
-    responses: []
+    dialogueText: '[Once the key slides in, a keyring with a single key hangs near
+      the wall amongst the collection of expired cleaning supplies.]'
+    responses:
+    - responseText: '[Continue]'
+      nextNode:
+        dialogueText: '[Maybe this can get you out.]'
+        responses:
+        - responseText: '[Close]'
+          nextNode:
+            dialogueText: 
+            responses: []
