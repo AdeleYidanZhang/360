@@ -2,41 +2,83 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Interaction_Dialogue : MonoBehaviour
 {
 
     public GameObject dialoguePanel;
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index;
 
-    public GameObject contButton;
+    //public GameObject contButton;
 
     public float wordSpeed;
     public bool playerIsClose;
+    public Canvas UI;
+    public GameObject prompt;
+
+    private bool isTyping;
+
+    private void Start()
+    {
+        prompt.SetActive(false);
+        dialogueText.text = "";
+        dialoguePanel.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && playerIsClose)
-        {
 
-            if(dialoguePanel.activeInHierarchy)
+
+        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        {
+            UI.gameObject.SetActive(false);
+
+            if (dialoguePanel.activeInHierarchy)
             {
-                zeroText();
+                if (isTyping) 
+                {
+                    StopAllCoroutines();
+                    dialogueText.text = dialogue[index];
+                    isTyping = false;
+                }
+                else
+                {
+                    NextLine(); 
+                }
             }
             else
             {
+
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
         }
 
-        if(dialogueText.text == dialogue[index])
-        {
-            contButton.SetActive(true);
-        }
+        //if(Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        //{
+
+        //    if (dialoguePanel.activeInHierarchy)
+        //    {
+        //        zeroText();
+        //    }
+        //    else
+        //    {
+        //        dialoguePanel.SetActive(true);
+        //        StartCoroutine(Typing());
+        //    }
+
+
+        //}
+
+        //if (dialogueText.text == dialogue[index])
+        //{
+        //    contButton.SetActive(true);
+        //}
+
     }
 
 
@@ -46,27 +88,36 @@ public class Interaction_Dialogue : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
+        isTyping = false;
+        UI.gameObject.SetActive(true);
 
     }
 
     IEnumerator Typing()
     {
-        foreach(char letter in dialogue[index].ToCharArray())
+
+        isTyping = true;
+        dialogueText.text = "";
+
+        foreach (char letter in dialogue[index].ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
+
+        isTyping = false;
+
     }
 
     public void NextLine()
     {
 
-        contButton.SetActive(false);
+        //contButton.SetActive(false);
 
-        if(index < dialogue.Length - 1)
+        if (index < dialogue.Length - 1)
         {
             index++;
-            dialogueText.text = "";
+            //dialogueText.text = "";
             StartCoroutine(Typing());
         }
         else
@@ -81,6 +132,7 @@ public class Interaction_Dialogue : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             playerIsClose = true;
+            prompt.SetActive(true);
         }
     }
 
@@ -89,6 +141,7 @@ public class Interaction_Dialogue : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
+            prompt.SetActive(false);
             zeroText();
         }
     }

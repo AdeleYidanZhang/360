@@ -9,12 +9,12 @@ public class SceneDirector : MonoBehaviour
     {
         SceneManager.LoadScene("Hallway");
         PlayerPrefs.SetFloat("HallPlayerX", -30f);
-        PlayerPrefs.SetFloat("HallPlayerY", -5f);
+        PlayerPrefs.SetFloat("HallPlayerY", -9.5f);
         PlayerPrefs.SetFloat("HallPlayerZ", 0f);
 
         PlayerPrefs.SetFloat("HallCameraLocationX", 0f);
         PlayerPrefs.SetFloat("HallCameraLocationY", 0f);
-        PlayerPrefs.SetFloat("HallCameraLocationZ", -50f);
+        PlayerPrefs.SetFloat("HallCameraLocationZ", -60f);
 
         PlayerPrefs.SetFloat("RoomPlayerX", 0f);
         PlayerPrefs.SetFloat("RoomPlayerY", -145f);

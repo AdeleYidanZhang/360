@@ -5,7 +5,7 @@ using UnityEngine;
 public class HallwayPlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
+    public float speed = 8f;
     private bool isFacingRight = false;
     public Rigidbody2D rb;
     public Animator anim;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TopDownPlayerMovement : MonoBehaviour
 {
-    public float speed = 24f;
+    public float speed = 8f;
     
     private Vector2 movement;
 

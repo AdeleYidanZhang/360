@@ -1,85 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DoorControlsRoom : MonoBehaviour
 {
-    public Interactible Floor1Door1;
-    public Interactible Floor2Door1;
-    public Interactible Floor2Door2;
-
-    public Camera hallwayCam;
+    public Camera roomCam;
 
     public SceneDirector director;
     public MasterInstance mainProcess;
-    public HallwayPlayerMovement hallPlayer;
-    public Canvas eyes;
     public string sceneName;
-    public Pause_Menu pause;
+    public TopDownPlayerMovement roomPlayer;
+
+    public GameObject puzzleClock;
+    public Canvas eyes;
 
     private void Awake()
     {
         sceneName = SceneManager.GetActiveScene().name;
+        puzzleClock.SetActive(true);
     }
 
     void Start()
     {
-        if (pause.isPaused)
-        {
-            eyes.gameObject.SetActive(false);
-            eyes.gameObject.SetActive(false);
-        }
-
         mainProcess = (MasterInstance)FindAnyObjectByType(typeof(MasterInstance));
         MasterInstance.loadPersistentLevel();
-
     }
 
     private void Update()
     {
-        PlayerPrefs.SetFloat("HallPlayerX", hallPlayer.transform.position.x);
-        PlayerPrefs.SetFloat("HallPlayerY", hallPlayer.transform.position.y);
-        PlayerPrefs.SetFloat("HallPlayerZ", hallPlayer.transform.position.z);
+        PlayerPrefs.SetFloat("RoomPlayerX", roomPlayer.transform.position.x);
+        PlayerPrefs.SetFloat("RoomPlayerY", roomPlayer.transform.position.y);
+        PlayerPrefs.SetFloat("RoomPlayerZ", roomPlayer.transform.position.z);
 
-        PlayerPrefs.SetFloat("HallCameraLocationX", hallwayCam.transform.position.x);
-        PlayerPrefs.SetFloat("HallCameraLocationY", hallwayCam.transform.position.y);
-        PlayerPrefs.SetFloat("HallCameraLocationZ", hallwayCam.transform.position.z);
+        PlayerPrefs.SetFloat("RoomCameraLocationX", roomCam.transform.position.x);
+        PlayerPrefs.SetFloat("RoomCameraLocationY", roomCam.transform.position.y);
+        PlayerPrefs.SetFloat("RoomCameraLocationZ", roomCam.transform.position.z);
     }
 
-    public void FromEntraceToLivingRoom()
+    public void FromLivingRoomToEntrace()
     {
-        PlayerPrefs.SetFloat("RoomPlayerX", 0f);
-        PlayerPrefs.SetFloat("RoomPlayerY", -145f);
-        PlayerPrefs.SetFloat("RoomPlayerZ", 0f);
+        PlayerPrefs.SetFloat("HallPlayerX", -30f);
+        PlayerPrefs.SetFloat("HallPlayerY", -9.5f);
+        PlayerPrefs.SetFloat("HallPlayerZ", 0f);
 
-        PlayerPrefs.SetFloat("RoomCameraLocationX", 0f);
-        PlayerPrefs.SetFloat("RoomCameraLocationY", -100f);
-        PlayerPrefs.SetFloat("RoomCameraLocationZ", -100f);
-        
-        director.EnterRoom();
+        PlayerPrefs.SetFloat("HallCameraLocationX", 0f);
+        PlayerPrefs.SetFloat("HallCameraLocationY", 0f);
+        PlayerPrefs.SetFloat("HallCameraLocationZ", -60f);
+        PlayerPrefs.SetInt("DirectionCoordiator", 2);
+
+        director.EnterHallway();
     }
 
-    public void FromDemoEndToLivingRoom()
+    public void FromLivingRoomToDemoEnd()
     {
-        PlayerPrefs.SetFloat("RoomPlayerX", -60f);
-        PlayerPrefs.SetFloat("RoomPlayerY", -85f);
-        PlayerPrefs.SetFloat("RoomPlayerZ", 0f);
+        PlayerPrefs.SetFloat("HallPlayerX", 30f);
+        PlayerPrefs.SetFloat("HallPlayerY", -55f);
+        PlayerPrefs.SetFloat("HallPlayerZ", 0f);
 
-        PlayerPrefs.SetFloat("RoomCameraLocationX", 0f);
-        PlayerPrefs.SetFloat("RoomCameraLocationY", -100f);
-        PlayerPrefs.SetFloat("RoomCameraLocationZ", -100f);
+        PlayerPrefs.SetFloat("HallCameraLocationX", 0f);
+        PlayerPrefs.SetFloat("HallCameraLocationY", -50f);
+        PlayerPrefs.SetFloat("HallCameraLocationZ", -30f);
+        PlayerPrefs.SetInt("DirectionCoordiator", 4);
 
-        director.EnterRoom();
+        director.EnterHallway();
     }
 
-    public void DemoEnd()
+    public void OpenClockPuzzle()
     {
-        if (PlayerPrefs.GetInt("demoDoorLock") == 0)
-        {
-            CloseGame();
-        }
+        puzzleClock.SetActive(true);
     }
 
     public void CloseGame()
