@@ -3196,7 +3196,7 @@ GameObject:
   - component: {fileID: 1041229793}
   - component: {fileID: 1041229792}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3850,7 +3850,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 24
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
