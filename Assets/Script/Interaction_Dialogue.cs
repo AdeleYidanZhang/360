@@ -38,10 +38,13 @@ public class Interaction_Dialogue : MonoBehaviour
                     StopAllCoroutines();
                     dialogueText.text = dialogue[index];
                     isTyping = false;
+
                 }
                 else
                 {
+
                     NextLine(); 
+
                 }
             }
             else
@@ -49,6 +52,7 @@ public class Interaction_Dialogue : MonoBehaviour
 
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
+
             }
         }
 

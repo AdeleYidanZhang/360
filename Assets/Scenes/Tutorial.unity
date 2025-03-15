@@ -570,8 +570,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 2068292243}
   dialogueText: {fileID: 1804199393}
   dialogue:
-  - two
-  - six
+  - The picture is a bit blurry, but the family on it would likely be the original
+    owner of the house.
   wordSpeed: 0.06
   playerIsClose: 0
 --- !u!212 &305618905
@@ -2214,9 +2214,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 2068292243}
   dialogueText: {fileID: 1804199393}
   dialogue:
-  - one
-  - two
-  - three
+  - "The windows were locked down, no way to open them from the inside\u2026"
+  - The window frames are already faded, it looks like the house has been unused
+    for many years.
   wordSpeed: 0.06
   playerIsClose: 0
 --- !u!1 &1476484725
@@ -2585,6 +2585,136 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526840235}
   m_CullTransparentMesh: 1
+--- !u!1 &1745650575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745650577}
+  - component: {fileID: 1745650576}
+  - component: {fileID: 1745650578}
+  m_Layer: 0
+  m_Name: Boundaries_Wall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1745650576
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745650575}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1745650577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745650575}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -51, y: 530.4822, z: 0}
+  m_LocalScale: {x: 100, y: 1139.9062, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1745650578
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745650575}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1787871376
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,7 +3613,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 2068292243}
   dialogueText: {fileID: 1804199393}
   dialogue:
-  - five
+  - "The telephone can\u2019t be dialed\u2026 Well, it will be a decoration then."
   wordSpeed: 0.06
   playerIsClose: 0
 --- !u!212 &2135004413
@@ -3559,6 +3689,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 656212797}
+  - {fileID: 356099030}
+  - {fileID: 1512158990}
   - {fileID: 1476484728}
   - {fileID: 567902455}
   - {fileID: 1064945979}
@@ -3567,8 +3699,7 @@ SceneRoots:
   - {fileID: 103187234}
   - {fileID: 2039543464}
   - {fileID: 472959054}
-  - {fileID: 356099030}
-  - {fileID: 1512158990}
   - {fileID: 1356997329}
   - {fileID: 305618906}
   - {fileID: 2135004414}
+  - {fileID: 1745650577}
