@@ -21,12 +21,7 @@ public class ClosetController : MonoBehaviour
         if (PlayerPrefs.GetInt("closetDoorLock") == 0)
         {
             talker.dialogue = openedDialogue;
-            ClosetDoor();
+            PlayerPrefs.SetInt("demoDoorLock", 0);
         }
-    }
-
-    public void ClosetDoor()
-    {
-        PlayerPrefs.SetInt("demoDoorLock", 1);
     }
 }

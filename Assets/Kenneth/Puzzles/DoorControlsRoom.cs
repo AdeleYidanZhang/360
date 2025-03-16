@@ -54,13 +54,13 @@ public class DoorControlsRoom : MonoBehaviour
 
     public void FromLivingRoomToDemoEnd()
     {
-        PlayerPrefs.SetFloat("HallPlayerX", 30f);
-        PlayerPrefs.SetFloat("HallPlayerY", -55f);
+        PlayerPrefs.SetFloat("HallPlayerX", 50f);
+        PlayerPrefs.SetFloat("HallPlayerY", -159.5f);
         PlayerPrefs.SetFloat("HallPlayerZ", 0f);
 
         PlayerPrefs.SetFloat("HallCameraLocationX", 0f);
-        PlayerPrefs.SetFloat("HallCameraLocationY", -50f);
-        PlayerPrefs.SetFloat("HallCameraLocationZ", -30f);
+        PlayerPrefs.SetFloat("HallCameraLocationY", -150f);
+        PlayerPrefs.SetFloat("HallCameraLocationZ", -60f);
         PlayerPrefs.SetInt("DirectionCoordiator", 4);
 
         director.EnterHallway();

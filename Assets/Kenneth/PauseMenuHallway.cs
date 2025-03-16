@@ -55,7 +55,7 @@ public class PauseMenuHallway : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main_Menu");
+        SceneManager.LoadScene("Demo Main Menu");
     }
 
     public void QuitGame()

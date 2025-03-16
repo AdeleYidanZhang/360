@@ -27,6 +27,8 @@ public class SceneDirector : MonoBehaviour
         PlayerPrefs.SetInt("DirectionCoordiator", 2);
 
         PlayerPrefs.SetInt("closetDoorLock", 1);
+        PlayerPrefs.SetInt("demoDoorLock", 1);
+
     }
 
     public void EnterHallway()

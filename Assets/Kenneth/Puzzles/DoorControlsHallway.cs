@@ -72,14 +72,6 @@ public class DoorControlsHallway : MonoBehaviour
         director.EnterRoom();
     }
 
-    public void DemoEnd()
-    {
-        if (PlayerPrefs.GetInt("demoDoorLock") == 0)
-        {
-            CloseGame();
-        }
-    }
-
     public void CloseGame()
     {
         Application.Quit();
