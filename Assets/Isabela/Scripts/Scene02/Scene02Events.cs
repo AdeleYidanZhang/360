@@ -10,7 +10,7 @@ public class Scene02Events : MonoBehaviour
 
     [SerializeField] GameObject fadeScreenIn2;
     [SerializeField] GameObject fadeScreenOut2;
-    public GameObject textBox;
+    [SerializeField] GameObject textBox;
     [SerializeField] string text;
     [SerializeField] int currentTextLength;
     [SerializeField] int textlength;
@@ -199,6 +199,13 @@ public class Scene02Events : MonoBehaviour
     {   
         yesButton.gameObject.SetActive(false);
         noButton.gameObject.SetActive(false);
+        gateInteract.SetActive(false);
+        gateInteract2.SetActive(false);
+        skyInteract.SetActive(false);
+        mansionInteract.SetActive(false);
+        afarInteract.SetActive(false);
+        yesAfterButton.gameObject.SetActive(false);
+        mainTextObject.SetActive(true);
         text = "This mansion seems to carry an inexplicable sense of malevolence, casting a spell on me, compelling me to step deeper in search of something unknown, as if I am sinking into a swamp, unable to escape...";
         textBox.GetComponent<TMPro.TMP_Text>().text = text;
         currentTextLength = text.Length;
