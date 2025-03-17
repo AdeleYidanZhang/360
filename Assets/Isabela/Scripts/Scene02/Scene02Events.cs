@@ -131,6 +131,7 @@ public class Scene02Events : MonoBehaviour
         mainTextObject.SetActive(false);
         eventPos = 0;
         yield return new WaitForSeconds(0.05f);
+        mainTextObject.SetActive(false);
     }
 
     IEnumerator EventFour()
