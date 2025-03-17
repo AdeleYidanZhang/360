@@ -7,7 +7,7 @@ public class SceneDirector : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Hallway");
+        SceneManager.LoadScene("LetterScene");
         PlayerPrefs.SetFloat("HallPlayerX", -30f);
         PlayerPrefs.SetFloat("HallPlayerY", -9.5f);
         PlayerPrefs.SetFloat("HallPlayerZ", 0f);
@@ -28,7 +28,6 @@ public class SceneDirector : MonoBehaviour
 
         PlayerPrefs.SetInt("closetDoorLock", 1);
         PlayerPrefs.SetInt("demoDoorLock", 1);
-
     }
 
     public void EnterHallway()

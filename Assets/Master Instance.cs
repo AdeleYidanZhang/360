@@ -57,8 +57,6 @@ public class MasterInstance : MonoBehaviour
     {
         currentSet = SceneManager.GetActiveScene();
         transitionAnimator.SetTrigger("End");
-
-        
     }
 
     // Listener for sceneLoaded

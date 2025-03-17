@@ -11,6 +11,9 @@ public class DemoEndController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        DemoEndUnlocked.SetActive(false);
+
         if (PlayerPrefs.GetInt("demoDoorLock") == 1) // 1 is locked
         {
             DemoEndUnlocked.SetActive(false);
