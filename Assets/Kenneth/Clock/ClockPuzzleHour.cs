@@ -26,7 +26,7 @@ public class ClockPuzzleHour : MonoBehaviour // right click
         if (Input.GetMouseButtonDown(1))
         {
             rightClickActive = true;
-            screenPos = myCam.WorldToScreenPoint(transform.position);
+            screenPos = myCam.ViewportToScreenPoint(transform.position);
             Vector3 v3 = Input.mousePosition - screenPos;
         }
         if (Input.GetMouseButtonUp(1))

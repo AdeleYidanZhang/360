@@ -25,7 +25,7 @@ public class ClockPuzzleMinute : MonoBehaviour // left click
         if (Input.GetMouseButtonDown(0))
         {
             leftClickActive = true;
-            screenPos = myCam.WorldToScreenPoint(transform.position);
+            screenPos = myCam.ViewportToScreenPoint(transform.position);
             Vector3 v3 = Input.mousePosition - screenPos;
         }
         if (Input.GetMouseButtonUp(0))
