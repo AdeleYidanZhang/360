@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +18,11 @@ public class Interaction_Dialogue : MonoBehaviour
     public bool playerIsClose;
 
     private bool isTyping;
+    private Coroutine typingCoroutine; // 保存当前正在运行的协程
+
+    private float timeSinceLastPress = 0f;
+    public float pressCooldown = 0.4f; // 0.2秒冷却时间
+
 
     private void Start()
     {
@@ -27,15 +32,17 @@ public class Interaction_Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        timeSinceLastPress += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && timeSinceLastPress >= pressCooldown)
         {
+            timeSinceLastPress = 0f; // 重置计时器
             if (dialoguePanel.activeInHierarchy)
             {
                 if (isTyping) 
                 {
 
-                    StopAllCoroutines();
+                    StopTyping(); // 停止当前打字的协程
+                    //StopAllCoroutines();
                     dialogueText.text = dialogue[index];
                     isTyping = false;
 
@@ -51,7 +58,8 @@ public class Interaction_Dialogue : MonoBehaviour
             {
 
                 dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
+                //StartCoroutine(Typing());
+                StartTyping(); // 启动打字协程
 
             }
         }
@@ -90,6 +98,23 @@ public class Interaction_Dialogue : MonoBehaviour
 
     }
 
+    // 启动打字协程
+    private void StartTyping()
+    {
+        StopTyping(); // 确保之前的打字协程被停止
+        typingCoroutine = StartCoroutine(Typing()); // 开始新的打字协程
+    }
+
+    // 停止当前的打字协程
+    private void StopTyping()
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine); // 停止旧的打字协程
+            typingCoroutine = null;
+        }
+    }
+
     IEnumerator Typing()
     {
 
@@ -115,7 +140,8 @@ public class Interaction_Dialogue : MonoBehaviour
         {
             index++;
             //dialogueText.text = "";
-            StartCoroutine(Typing());
+            //StartCoroutine(Typing());
+            StartTyping(); // 显示下一行对话
         }
         else
         {
@@ -137,7 +163,11 @@ public class Interaction_Dialogue : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
-            zeroText();
+            // 在调用 zeroText() 之前，检查 dialoguePanel 是否为 null
+            if (dialoguePanel != null)
+            {
+                zeroText();
+            }
         }
     }
 
