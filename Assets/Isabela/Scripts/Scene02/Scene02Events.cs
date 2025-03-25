@@ -4,6 +4,8 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using TMPro;
 
 public class Scene02Events : MonoBehaviour
 {
@@ -14,10 +16,10 @@ public class Scene02Events : MonoBehaviour
     [SerializeField] string text;
     [SerializeField] int currentTextLength;
     [SerializeField] int textlength;
+    [SerializeField] GameObject counterBox;
     [SerializeField] GameObject mainTextObject;
     [SerializeField] int eventPos = 0;
     [SerializeField] Button yesButton;
-    [SerializeField] Button yesAfterButton;
     [SerializeField] Button noButton;
     [SerializeField] GameObject gateInteract;
     [SerializeField] GameObject gateInteract2;
@@ -40,6 +42,7 @@ public class Scene02Events : MonoBehaviour
         skyInteract.SetActive(false);
         mansionInteract.SetActive(false);
         afarInteract.SetActive(false);
+        counterBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -67,6 +70,22 @@ public class Scene02Events : MonoBehaviour
             StopCoroutine(EventThree());
             StartCoroutine(EventFour());
         }
+
+    }
+
+    void HowManyBoolsTrue()
+    {
+        int counter = (mansionChecked ? 1 : 0) + (skyChecked ? 1 : 0) + (afarChecked ? 1 : 0) + (gateChecked ? 1 : 0);
+
+        string counterText = $"{counter}/4 Discovered";
+
+        if (counter == 4)
+        {
+            counterText = "Interact with Mansion again";
+        }
+
+        counterBox.GetComponent<TMPro.TMP_Text>().text = counterText;
+
 
     }
 
@@ -131,7 +150,7 @@ public class Scene02Events : MonoBehaviour
         mainTextObject.SetActive(false);
         eventPos = 0;
         yield return new WaitForSeconds(0.05f);
-        mainTextObject.SetActive(false);
+        counterBox.SetActive(true);
     }
 
     IEnumerator EventFour()
@@ -160,6 +179,7 @@ public class Scene02Events : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(GateInteract());
             gateChecked = true;
+            HowManyBoolsTrue();
         }
         
     }
@@ -171,6 +191,7 @@ public class Scene02Events : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(MansionInteract());
             mansionChecked = true;
+            HowManyBoolsTrue();
         }
     }
 
@@ -181,6 +202,7 @@ public class Scene02Events : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(SkyInteract());
             skyChecked = true;
+            HowManyBoolsTrue();
         }
 
     }
@@ -192,6 +214,7 @@ public class Scene02Events : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(AfarInteract());
             afarChecked = true;
+            HowManyBoolsTrue();
 
         }
     }
@@ -205,8 +228,8 @@ public class Scene02Events : MonoBehaviour
         skyInteract.SetActive(false);
         mansionInteract.SetActive(false);
         afarInteract.SetActive(false);
-        yesAfterButton.gameObject.SetActive(false);
         mainTextObject.SetActive(true);
+        counterBox.SetActive(false);
         text = "This mansion seems to carry an inexplicable sense of malevolence, casting a spell on me, compelling me to step deeper in search of something unknown, as if I am sinking into a swamp, unable to escape...";
         textBox.GetComponent<TMPro.TMP_Text>().text = text;
         currentTextLength = text.Length;
@@ -235,7 +258,7 @@ public class Scene02Events : MonoBehaviour
         skyInteract.SetActive(true);
         mansionInteract.SetActive(true);
         afarInteract.SetActive(true);
-        yesAfterButton.gameObject.SetActive(true);
+        counterBox.SetActive(true);
         eventPos = 3;
     }
 
@@ -259,6 +282,14 @@ public class Scene02Events : MonoBehaviour
         if (mansionChecked && skyChecked && afarChecked && gateChecked)
         {
             mainTextObject.SetActive(true);
+            yesButton.gameObject.SetActive(false);
+            noButton.gameObject.SetActive(false);
+            gateInteract.SetActive(false);
+            gateInteract2.SetActive(false);
+            skyInteract.SetActive(false);
+            mansionInteract.SetActive(false);
+            afarInteract.SetActive(false);
+            counterBox.SetActive(false);
             text = "This mansion seems to carry an inexplicable sense of malevolence, casting a spell on me, compelling me to step deeper in search of something unknown, as if I am sinking into a swamp, unable to escape...";
             textBox.GetComponent<TMPro.TMP_Text>().text = text;
             currentTextLength = text.Length;

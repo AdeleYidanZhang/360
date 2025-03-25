@@ -31,7 +31,7 @@ public class ClockPuzzleMaster : MonoBehaviour
     void Update() // NOTE: 12:00 IS 0. 9 IS 90. 6 IS 180. 3 IS -90
     {
 
-        Debug.Log($"Minute Hand: {minuteHand.angle}, Hour Hand: {hourHand.angle}");
+        Debug.Log($"Hour Hand: {hourHand.transform.eulerAngles.z}");
 
         if (minuteHand.angle >= 50f && minuteHand.angle <= 52f)
         {
@@ -39,9 +39,9 @@ public class ClockPuzzleMaster : MonoBehaviour
             minuteHand.notWonYet = false;
         }
 
-        if (hourHand.angle >= -142f && hourHand.angle <= -140f)
+        if (hourHand.transform.eulerAngles.z >= 214f && hourHand.transform.eulerAngles.z <= 215f)
         {
-            hourHand.angle = -141f;
+
             hourHand.notWonYet = false;
         }
 

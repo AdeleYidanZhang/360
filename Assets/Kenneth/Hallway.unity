@@ -702,7 +702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4422642507793457392, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4422642507793457392, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -885,13 +885,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1519,7 +1519,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2146766108}
   MainUI: {fileID: 325848746}
-  player: {fileID: 323807447}
   isPaused: 0
 --- !u!114 &588263827
 MonoBehaviour:
@@ -2420,6 +2419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressCooldown: 0.4
   dialoguePanel: {fileID: 2098234446}
   dialogueText: {fileID: 355098949}
   dialogue:
@@ -2856,6 +2856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressCooldown: 0.4
   dialoguePanel: {fileID: 2098234446}
   dialogueText: {fileID: 355098949}
   dialogue:
@@ -4253,6 +4254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressCooldown: 0.4
   dialoguePanel: {fileID: 2098234446}
   dialogueText: {fileID: 355098949}
   dialogue:
@@ -4850,6 +4852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressCooldown: 0.4
   dialoguePanel: {fileID: 2098234446}
   dialogueText: {fileID: 355098949}
   dialogue:
@@ -5003,6 +5006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressCooldown: 0.4
   dialoguePanel: {fileID: 2098234446}
   dialogueText: {fileID: 355098949}
   dialogue:
@@ -5145,7 +5149,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -325}
-  m_SizeDelta: {x: 700, y: 120}
+  m_SizeDelta: {x: 900, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098234448
 MonoBehaviour:
@@ -5328,6 +5332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressCooldown: 0.4
   dialoguePanel: {fileID: 1206620758}
   dialogueText: {fileID: 1409940390}
   dialogue:
@@ -5679,7 +5684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3081461559850638636, guid: 8a2f692aa3b08d848b1c0d0e2901a0a4, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3081461559850638636, guid: 8a2f692aa3b08d848b1c0d0e2901a0a4, type: 3}
       propertyPath: m_fontAsset
@@ -5687,7 +5692,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4c3d24f77c758824fa5b2910de562bb9, type: 2}
     - target: {fileID: 3081461559850638636, guid: 8a2f692aa3b08d848b1c0d0e2901a0a4, type: 3}
       propertyPath: m_fontSizeBase
-      value: 36
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3081461559850638636, guid: 8a2f692aa3b08d848b1c0d0e2901a0a4, type: 3}
       propertyPath: m_sharedMaterial

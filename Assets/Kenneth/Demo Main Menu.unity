@@ -725,8 +725,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What will be presented is a demo of the game to come. Thank you for our
-    time and attention
+  m_Text: What will be presented is a demo of the game to come. Thank you for your
+    time and attention.
 --- !u!222 &928233466
 CanvasRenderer:
   m_ObjectHideFlags: 0

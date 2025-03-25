@@ -40,7 +40,7 @@ public class DoorControlsRoom : MonoBehaviour
 
     public void FromLivingRoomToEntrace()
     {
-        PlayerPrefs.SetFloat("HallPlayerX", -30f);
+        PlayerPrefs.SetFloat("HallPlayerX", 50f);
         PlayerPrefs.SetFloat("HallPlayerY", -9.5f);
         PlayerPrefs.SetFloat("HallPlayerZ", 0f);
 
