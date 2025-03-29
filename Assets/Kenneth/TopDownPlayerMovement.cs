@@ -12,6 +12,10 @@ public class TopDownPlayerMovement : MonoBehaviour
     public Camera roomCamera;
     public Animator animator;
 
+    public AudioSource SFXPlayer;
+    public AudioClip footsteps;
+    public AudioClip uiSFX;
+    public AudioClip doorSFX;
 
     //public Animator anim;
     //public bool interactingWithScreen;
@@ -27,6 +31,8 @@ public class TopDownPlayerMovement : MonoBehaviour
     {
         transform.position = new Vector3(PlayerPrefs.GetFloat("RoomPlayerX"), PlayerPrefs.GetFloat("RoomPlayerY"), PlayerPrefs.GetFloat("RoomPlayerZ"));
         roomCamera.transform.position = new Vector3(PlayerPrefs.GetFloat("RoomCameraLocationX"), PlayerPrefs.GetFloat("RoomCameraLocationY"), PlayerPrefs.GetFloat("RoomCameraLocationZ"));
+        SFXPlayer.PlayOneShot(doorSFX);
+
     }
 
     // Update is called once per frame
@@ -39,27 +45,15 @@ public class TopDownPlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        //if (interactingWithScreen)
-        //{
-        //    rb.velocity = new Vector2(0f, 0f);
-        //}
-        //else
-        //{
-        //    rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
-        //}
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        {
+            SFXPlayer.PlayOneShot(footsteps);
+        }
 
-        //if ((Input.GetAxisRaw("Horizontal") == 0f) && (Input.GetAxisRaw("Vertical") == 0f))
-        //{
-        //    anim.SetBool("isWalking", false);
-        //    anim.SetFloat("LastInputX", movement.x);
-        //    anim.SetFloat("LastInputY", movement.y);
-        //} else
-        //{
-
-        //    anim.SetBool("isWalking", true);
-        //    anim.SetFloat("InputX", movement.x);
-        //    anim.SetFloat("InputY", movement.y);
-        //}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SFXPlayer.PlayOneShot(uiSFX);
+        }
     }
 
     private void FixedUpdate()

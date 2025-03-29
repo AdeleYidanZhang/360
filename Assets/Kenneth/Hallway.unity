@@ -773,6 +773,22 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8526719241899968035, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
+      propertyPath: uiSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d19160602369914a9ddad2c40eb43fe, type: 3}
+    - target: {fileID: 8526719241899968035, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
+      propertyPath: doorSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 12cdab5f8225f944eb9cdd848b3a210e, type: 3}
+    - target: {fileID: 8526719241899968035, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
+      propertyPath: SFXPlayer
+      value: 
+      objectReference: {fileID: 927916078}
+    - target: {fileID: 8526719241899968035, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
+      propertyPath: footsteps
+      value: 
+      objectReference: {fileID: 8300000, guid: 52c55ce444c3c6b48aee094eadce87ff, type: 3}
+    - target: {fileID: 8526719241899968035, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -783,19 +799,27 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 841566845733033030, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 927916078}
   m_SourcePrefab: {fileID: 100100000, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
 --- !u!114 &323807447 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8526719241899968035, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
   m_PrefabInstance: {fileID: 323807446}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 323807448}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24e31620622f9f6469c9bf2c7a6afa11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &323807448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 841566845733033030, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
+  m_PrefabInstance: {fileID: 323807446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!223 &325848746 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 8131844406846677836, guid: 8a2f692aa3b08d848b1c0d0e2901a0a4, type: 3}
@@ -2254,6 +2278,102 @@ Animator:
   m_CorrespondingSourceObject: {fileID: -4524103841198160466, guid: 397e19de860be1b4f842120fc58c117e, type: 3}
   m_PrefabInstance: {fileID: 323807446}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &927916078
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323807448}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1001842227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,7 +4356,7 @@ GameObject:
   - component: {fileID: 1500317470}
   - component: {fileID: 1500317467}
   m_Layer: 0
-  m_Name: DemoEndLocked
+  m_Name: Continue Locked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5202,7 +5322,7 @@ GameObject:
   - component: {fileID: 2125124804}
   - component: {fileID: 2125124806}
   m_Layer: 0
-  m_Name: DemoEndUnlocked
+  m_Name: Continue UnLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5329,20 +5449,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2125124801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ec7b134c40531e458766d06b740b144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressCooldown: 0.4
-  dialoguePanel: {fileID: 1206620758}
-  dialogueText: {fileID: 1409940390}
-  dialogue:
-  - This marks the end of the demo for Flipside. Thank you for being with us for
-    as long as you did, and we sincerely hope to see you soon with a stronger, fuller,
-    and more delightful vision when this is done.   From the CCCP
-  wordSpeed: 0.12
-  playerIsClose: 0
-  UI: {fileID: 325848746}
-  prompt: {fileID: 2973473306438450365}
+  inRange: 0
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 588263827}
+        m_TargetAssemblyTypeName: DoorControlsHallway, Assembly-CSharp
+        m_MethodName: FromHallwayToReadingRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionPrompt: {fileID: 2973473306438450365}
+  isInteracting: 0
 --- !u!1 &2125698766
 GameObject:
   m_ObjectHideFlags: 0

@@ -72,6 +72,20 @@ public class DoorControlsHallway : MonoBehaviour
         director.EnterRoom();
     }
 
+    public void FromHallwayToReadingRoom()
+    {
+        PlayerPrefs.SetFloat("RoomPlayerX", 0f);
+        PlayerPrefs.SetFloat("RoomPlayerY", -396f);
+        PlayerPrefs.SetFloat("RoomPlayerZ", 0f);
+
+        PlayerPrefs.SetFloat("RoomCameraLocationX", 0f);
+        PlayerPrefs.SetFloat("RoomCameraLocationY", -400f);
+        PlayerPrefs.SetFloat("RoomCameraLocationZ", -60f);
+        PlayerPrefs.SetInt("DirectionCoordiator", 5);
+
+        director.EnterRoom();
+    }
+
     public void CloseGame()
     {
         Application.Quit();

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class HallwayPlayerMovement : MonoBehaviour
 {
@@ -12,10 +14,16 @@ public class HallwayPlayerMovement : MonoBehaviour
     public Camera hallwayCamera;
     public bool interactingWithScreen;
 
+    public AudioSource SFXPlayer;
+    public AudioClip footsteps;
+    public AudioClip uiSFX;
+    public AudioClip doorSFX;
+
     private void Start()
     {
         transform.position = new Vector3(PlayerPrefs.GetFloat("HallPlayerX"), PlayerPrefs.GetFloat("HallPlayerY"), PlayerPrefs.GetFloat("HallPlayerZ"));
         hallwayCamera.transform.position = new Vector3(PlayerPrefs.GetFloat("HallCameraLocationX"), PlayerPrefs.GetFloat("HallCameraLocationY"), PlayerPrefs.GetFloat("HallCameraLocationZ"));
+        SFXPlayer.PlayOneShot(doorSFX);
     }
 
     // Update is called once per frame
@@ -24,6 +32,16 @@ public class HallwayPlayerMovement : MonoBehaviour
         anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
         horizontal = Input.GetAxisRaw("Horizontal");
         Flip();
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        {
+            SFXPlayer.PlayOneShot(footsteps);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SFXPlayer.PlayOneShot(uiSFX);
+        }
     }
 
     private void FixedUpdate()

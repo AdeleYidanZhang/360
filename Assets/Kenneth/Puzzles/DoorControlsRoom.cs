@@ -66,6 +66,20 @@ public class DoorControlsRoom : MonoBehaviour
         director.EnterHallway();
     }
 
+    public void FromReadingRoomToHallway()
+    {
+        PlayerPrefs.SetFloat("HallPlayerX", -18f);
+        PlayerPrefs.SetFloat("HallPlayerY", -159.5f);
+        PlayerPrefs.SetFloat("HallPlayerZ", 0f);
+
+        PlayerPrefs.SetFloat("HallCameraLocationX", 0f);
+        PlayerPrefs.SetFloat("HallCameraLocationY", -150f);
+        PlayerPrefs.SetFloat("HallCameraLocationZ", -60f);
+        PlayerPrefs.SetInt("DirectionCoordiator", 4);
+
+        director.EnterHallway();
+    }
+
     public void OpenClockPuzzle()
     {
         puzzleClock.SetActive(true);
@@ -74,5 +88,15 @@ public class DoorControlsRoom : MonoBehaviour
     public void CloseGame()
     {
         Application.Quit();
+    }
+
+    public void PeakAtTable()
+    {
+        roomCam.transform.position = new Vector3(100f, -400f, -10f);
+    }
+
+    public void BackAwayFromTable()
+    {
+        roomCam.transform.position = new Vector3(0f, -400f, -60f);
     }
 }
