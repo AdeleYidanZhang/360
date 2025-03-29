@@ -89,14 +89,4 @@ public class DoorControlsRoom : MonoBehaviour
     {
         Application.Quit();
     }
-
-    public void PeakAtTable()
-    {
-        roomCam.transform.position = new Vector3(100f, -400f, -10f);
-    }
-
-    public void BackAwayFromTable()
-    {
-        roomCam.transform.position = new Vector3(0f, -400f, -60f);
-    }
 }

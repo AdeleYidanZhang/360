@@ -7291,8 +7291,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1191037979}
-        m_TargetAssemblyTypeName: DoorControlsRoom, Assembly-CSharp
+      - m_Target: {fileID: 1191037981}
+        m_TargetAssemblyTypeName: DeskInteract, Assembly-CSharp
         m_MethodName: BackAwayFromTable
         m_Mode: 1
         m_Arguments:
@@ -8095,6 +8095,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1151682064}
   - component: {fileID: 1151682063}
+  - component: {fileID: 1151682065}
+  - component: {fileID: 1151682066}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -8169,6 +8171,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1151682065
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151682062}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 25.006105, y: 20}
+    newSize: {x: 25.006105, y: 20}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15, y: 5}
+  m_EdgeRadius: 0
+--- !u!114 &1151682066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151682062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressCooldown: 0.4
+  dialoguePanel: {fileID: 2141025445}
+  dialogueText: {fileID: 2021980078}
+  dialogue:
+  - Still looking good, after all these years.
+  - Could do without the bags, though.
+  wordSpeed: 0.06
+  playerIsClose: 0
+  UI: {fileID: 1975455696}
+  prompt: {fileID: 1393479920}
 --- !u!1 &1157038345
 GameObject:
   m_ObjectHideFlags: 0
@@ -8636,6 +8705,7 @@ GameObject:
   - component: {fileID: 1191037977}
   - component: {fileID: 1191037980}
   - component: {fileID: 1191037978}
+  - component: {fileID: 1191037981}
   m_Layer: 0
   m_Name: DoorController
   m_TagString: Untagged
@@ -8741,6 +8811,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookshelf: {fileID: 1683170138}
+--- !u!114 &1191037981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191037971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 977dd50a885ecc1488d29f49e94098b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleHint: {fileID: 604043589}
+  eyeUI: {fileID: 1975455696}
+  roomCam: {fileID: 1217459068}
 --- !u!1 &1200284269
 GameObject:
   m_ObjectHideFlags: 0
@@ -13758,7 +13843,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 195134354698788981, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: m_Radius
-      value: 2.04
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 195134354698788981, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: m_Offset.x
@@ -13783,7 +13868,7 @@ PrefabInstance:
     - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1191037979}
+      objectReference: {fileID: 1191037981}
     - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -13794,7 +13879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorControlsRoom, Assembly-CSharp
+      value: DeskInteract, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -13814,7 +13899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3045620269567355424, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.68
+      value: -1.94
       objectReference: {fileID: 0}
     - target: {fileID: 3045620269567355424, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16306,6 +16391,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1707761350}
+  - {fileID: 2117517797}
   m_Father: {fileID: 1784465662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2067753111
@@ -16591,6 +16677,117 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2117517796
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2067753110}
+    m_Modifications:
+    - target: {fileID: 57522472824247525, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 57522472824247525, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 57522472824247525, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_Offset.y
+      value: 3.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016661991316904867, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: m_Name
+      value: InteractiveBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4016661991316904867, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2117517799}
+  m_SourcePrefab: {fileID: 100100000, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+--- !u!4 &2117517797 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1885909445013498255, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+  m_PrefabInstance: {fileID: 2117517796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2117517798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4016661991316904867, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+  m_PrefabInstance: {fileID: 2117517796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2117517799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117517798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf3b8e2e8b272d4eb171688a468696b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressCooldown: 0.4
+  dialoguePanel: {fileID: 2141025445}
+  dialogueText: {fileID: 2021980078}
+  dialogue:
+  - 'This antique desk is very old. '
+  - Judging by the items placed on it, it should belong to the man of the house.
+  - "There\u2019s also a photograph..."
+  - It looks like a family portrait of this household, featuring the man, his wife,
+    and their daughter.
+  - ... why does this little girl look somewhat familiar?
+  - ...
+  - There seems to be an inscription on the corner of the desk... Is this a motto?
+  wordSpeed: 0.06
+  playerIsClose: 0
+  UI: {fileID: 1975455696}
+  prompt: {fileID: 1393479920}
 --- !u!1 &2119913194
 GameObject:
   m_ObjectHideFlags: 0
