@@ -697,7 +697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to Interact
+  m_text: Left Click to Interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c3d24f77c758824fa5b2910de562bb9, type: 2}
   m_sharedMaterial: {fileID: -2826029566709823799, guid: 4c3d24f77c758824fa5b2910de562bb9, type: 2}
@@ -724,8 +724,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -781,16 +781,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46722703}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1818225201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -960, y: -540}
+  m_AnchoredPosition: {x: 0, y: -180}
   m_SizeDelta: {x: 350, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &59822333
@@ -3702,7 +3702,8 @@ GameObject:
   m_Component:
   - component: {fileID: 403114455}
   - component: {fileID: 403114456}
-  - component: {fileID: 403114457}
+  - component: {fileID: 403114461}
+  - component: {fileID: 403114462}
   m_Layer: 0
   m_Name: Filter
   m_TagString: Untagged
@@ -3770,7 +3771,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.61, y: 13.96}
   m_EdgeRadius: 0
---- !u!114 &403114457
+--- !u!114 &403114461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403114454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3e2aaa7582f554691e88cb8b239839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressCooldown: 0.4
+  dialoguePanel: {fileID: 2141025445}
+  dialogueText: {fileID: 2021980078}
+  dialogue:
+  - There are so many books here...
+  - "Though they\u2019re covered in dust, it\u2019s clear most of them are related
+    to mysticism... "
+  - "Wait, a few books don\u2019t have dust on them, as if they were recently moved..."
+  - ... Is there some kind of mechanism here?
+  wordSpeed: 0.06
+  playerIsClose: 0
+  UI: {fileID: 1975455696}
+  prompt: {fileID: 46722703}
+  Distraction: {fileID: 1818225200}
+--- !u!114 &403114462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3798,7 +3825,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionPrompt: {fileID: 46722703}
+  interactionPrompt: {fileID: 0}
 --- !u!1 &413738850
 GameObject:
   m_ObjectHideFlags: 0
@@ -11895,7 +11922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -184.4}
+  m_AnchoredPosition: {x: 0, y: -180}
   m_SizeDelta: {x: 350, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1393479922
@@ -16568,7 +16595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1882474367
 MonoBehaviour:
   m_ObjectHideFlags: 0

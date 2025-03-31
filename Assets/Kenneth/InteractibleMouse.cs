@@ -27,10 +27,12 @@ public class InteractibleMouse : MonoBehaviour
     private void OnMouseOver()
     {
         inRange = true;
+        interactionPrompt.SetActive(true);
     }
 
     private void OnMouseExit()
     {
         inRange = false;
+        interactionPrompt.SetActive(false);
     }
 }

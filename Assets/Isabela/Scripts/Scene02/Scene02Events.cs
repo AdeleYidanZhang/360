@@ -4,6 +4,7 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Scene02Events : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Scene02Events : MonoBehaviour
     [SerializeField] GameObject mansionInteract;
     [SerializeField] GameObject skyInteract;
     [SerializeField] GameObject afarInteract;
+    [SerializeField] TextMeshProUGUI counterText;
     [SerializeField] bool gateChecked = false;
     [SerializeField] bool skyChecked = false;
     [SerializeField] bool afarChecked = false;
@@ -39,12 +41,14 @@ public class Scene02Events : MonoBehaviour
         skyInteract.SetActive(false);
         mansionInteract.SetActive(false);
         afarInteract.SetActive(false);
+        counterText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         textlength = TextCreator.charCount;
+        counterOfDiscovered();
 
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 1)
         {
@@ -53,7 +57,7 @@ public class Scene02Events : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 2)
         {
-            StopCoroutine (EventOne());
+            StopCoroutine(EventOne());
             StartCoroutine(EventTwo());
         }
         if (Input.GetMouseButtonDown(0) && textlength == currentTextLength && eventPos == 3)
@@ -67,6 +71,23 @@ public class Scene02Events : MonoBehaviour
             StartCoroutine(EventFour());
         }
 
+    }
+
+    public void counterOfDiscovered()
+    {
+        int gate = gateChecked ? 1 : 0;
+        int sky = skyChecked ? 1 : 0;
+        int afar = afarChecked ? 1 : 0;
+        int mansion = mansionChecked ? 1 : 0;
+
+        int total = gate + sky + afar + mansion;
+
+        counterText.text = $"Total Discovered: {total} / 4";
+
+        if (total == 4)
+        {
+            counterText.text = "Pursue the Manor";
+        }
     }
 
     IEnumerator EventStarter()
@@ -117,8 +138,8 @@ public class Scene02Events : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         yesButton.gameObject.SetActive(true);
         noButton.gameObject.SetActive(true);
-               // if yes, transition into the next scene
-               // if false, setActive interactive objects
+        // if yes, transition into the next scene
+        // if false, setActive interactive objects
 
     }
 
@@ -137,29 +158,29 @@ public class Scene02Events : MonoBehaviour
         // event 4
         fadeScreenOut2.SetActive(true);
         yield return new WaitForSeconds(2);
-        //SceneManager.LoadScene(); // switch to the hallway
+        SceneManager.LoadScene("Hallway"); // switch to the hallway
     }
 
     public void ClickYesButton()
-    {   
+    {
         StartCoroutine(YesButtonInteract());
 
     }
 
     public void ClickNoButton()
     {
-        StartCoroutine (NoButtonInteract());
+        StartCoroutine(NoButtonInteract());
     }
 
     public void ClickOnGate()
     {
         if (textlength == currentTextLength)
-        {   
+        {
             StopAllCoroutines();
             StartCoroutine(GateInteract());
             gateChecked = true;
         }
-        
+
     }
 
     public void ClickOnMansion()
@@ -195,7 +216,7 @@ public class Scene02Events : MonoBehaviour
     }
 
     IEnumerator YesButtonInteract()
-    {   
+    {
         yesButton.gameObject.SetActive(false);
         noButton.gameObject.SetActive(false);
         text = "This mansion seems to carry an inexplicable sense of malevolence, casting a spell on me, compelling me to step deeper in search of something unknown, as if I am sinking into a swamp, unable to escape...";
@@ -207,7 +228,7 @@ public class Scene02Events : MonoBehaviour
         yield return new WaitUntil(() => textlength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
         eventPos = 4;
-        
+
     }
 
     IEnumerator NoButtonInteract()
@@ -226,6 +247,7 @@ public class Scene02Events : MonoBehaviour
         skyInteract.SetActive(true);
         mansionInteract.SetActive(true);
         afarInteract.SetActive(true);
+        counterText.gameObject.SetActive(true);
         eventPos = 3;
     }
 
@@ -241,6 +263,8 @@ public class Scene02Events : MonoBehaviour
         yield return new WaitUntil(() => textlength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
         eventPos = 3;
+        gateInteract.SetActive(false);
+        gateInteract2.SetActive(false);
     }
 
     IEnumerator MansionInteract()
@@ -249,6 +273,14 @@ public class Scene02Events : MonoBehaviour
         if (mansionChecked && skyChecked && afarChecked && gateChecked)
         {
             mainTextObject.SetActive(true);
+
+            gateInteract.SetActive(false);
+            gateInteract2.SetActive(false);
+            skyInteract.SetActive(false);
+            mansionInteract.SetActive(false);
+            afarInteract.SetActive(false);
+            counterText.gameObject.SetActive(false);
+
             text = "This mansion seems to carry an inexplicable sense of malevolence, casting a spell on me, compelling me to step deeper in search of something unknown, as if I am sinking into a swamp, unable to escape...";
             textBox.GetComponent<TMPro.TMP_Text>().text = text;
             currentTextLength = text.Length;
@@ -257,6 +289,7 @@ public class Scene02Events : MonoBehaviour
             yield return new WaitForSeconds(1);
             yield return new WaitUntil(() => textlength == currentTextLength);
             yield return new WaitForSeconds(0.5f);
+
             eventPos = 4;
         }
         else
@@ -288,6 +321,7 @@ public class Scene02Events : MonoBehaviour
         yield return new WaitUntil(() => textlength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
         eventPos = 3;
+        skyInteract.SetActive(false);
     }
 
     IEnumerator AfarInteract()
@@ -302,7 +336,6 @@ public class Scene02Events : MonoBehaviour
         yield return new WaitUntil(() => textlength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
         eventPos = 3;
+        afarInteract.SetActive(false);
     }
-
-
 }

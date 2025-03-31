@@ -26,8 +26,10 @@ public class BookshelfPuzzle : MonoBehaviour
     void Start()
     {
         foundBookOrderYet = false;
+        backOffButton.gameObject.SetActive(false);
         puzzleSolved = false;
         WinAnnouncement.SetActive(false);
+        exitBookSelf();
     }
 
     // Update is called once per frame
@@ -38,10 +40,12 @@ public class BookshelfPuzzle : MonoBehaviour
         if (!foundBookOrderYet)
         {
             filter.SetActive(true);
+            PlayerProgress.gameObject.SetActive(false);
         }
         if (foundBookOrderYet)
         {
             filter.SetActive(false);
+            PlayerProgress.gameObject.SetActive(true);
         }
 
         // win condition
@@ -104,7 +108,7 @@ public class BookshelfPuzzle : MonoBehaviour
     {
         backOffButton.gameObject.SetActive(false);
         eyeUI.gameObject.SetActive(true);
-        roomCam.transform.position = new Vector3(0f, -400f, -60f);
+        roomCam.transform.position = new Vector3(0f, -397f, -60f);
     }
 
     public void enterSortingShelf()
