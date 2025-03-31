@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 96b632573fea2804fa6e1d0ad2017eab
+guid: 3a8c2aeab777fa5489b386b5ffa09a83
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,169 +97,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TopDown_Front_0
+      name: side_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
+        y: 0
         width: 2048
-        height: 2044
+        height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 563741bf4d8b6c04fa2d81c278a0b3f4
-      internalID: -656589631
+      spriteID: bfd14c6670032ef489e1fd21f288577b
+      internalID: -1051196049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopDown_Front_1
+      name: side_1
       rect:
         serializedVersion: 2
-        x: 2047
-        y: 4
-        width: 2047
-        height: 2044
+        x: 2048
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35fc7d2c83971c94694362a2524ccb15
-      internalID: -219330828
+      spriteID: 9d7dac674c9c9a14aaf86aa2c9ba5f24
+      internalID: -1759516889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopDown_Front_2
+      name: side_2
       rect:
         serializedVersion: 2
-        x: 4094
-        y: 4
-        width: 2047
-        height: 2044
+        x: 4096
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe1a152fcdb461a47b8ff7aa15ab1b89
-      internalID: -130866395
+      spriteID: ac6bfb75fea6bb74bb30ab4b9e9f11b5
+      internalID: 33176739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopDown_Front_3
+      name: side_3
       rect:
         serializedVersion: 2
-        x: 6141
-        y: 4
-        width: 2047
-        height: 2044
+        x: 6144
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bec74a8a4945b264b90a2f6457f991cc
-      internalID: -1409895391
+      spriteID: 612645e5a3f218b43886af04d7144445
+      internalID: 1749104022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopDown_Front_4
+      name: side_4
       rect:
         serializedVersion: 2
-        x: 8188
-        y: 4
-        width: 2047
-        height: 2044
+        x: 8192
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d6774954de4d8a42ae23930ac828d51
-      internalID: 1124314624
+      spriteID: 02ab388713650994aabcccd1a7d2126a
+      internalID: -486987791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopDown_Front_5
+      name: side_5
       rect:
         serializedVersion: 2
-        x: 10235
-        y: 4
-        width: 2047
-        height: 2044
+        x: 10240
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53db2260c8a0fac43bee3f32da209c3d
-      internalID: 1378636047
+      spriteID: eb725431cfbafbc4693283b59ca1dcb0
+      internalID: -1318762755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopDown_Front_6
+      name: side_6
       rect:
         serializedVersion: 2
-        x: 12282
-        y: 4
-        width: 2047
-        height: 2044
+        x: 12288
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d06ada0a32e0a904d94aaa432847fb6f
-      internalID: -1308915823
+      spriteID: dcb4e1a6127341d4ca04eac818d14c23
+      internalID: -214294475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopDown_Front_7
+      name: side_7
       rect:
         serializedVersion: 2
-        x: 14329
-        y: 4
-        width: 2047
-        height: 2044
+        x: 14336
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20b8956b44e7a0f4f8c3f94f6e46c670
-      internalID: -215643437
+      spriteID: a74fcedda4fceb64dbc2eaf9c8612e9a
+      internalID: 1301142893
       vertices: []
       indices: 
       edges: []
@@ -275,14 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TopDown_Front_0: -656589631
-      TopDown_Front_1: -219330828
-      TopDown_Front_2: -130866395
-      TopDown_Front_3: -1409895391
-      TopDown_Front_4: 1124314624
-      TopDown_Front_5: 1378636047
-      TopDown_Front_6: -1308915823
-      TopDown_Front_7: -215643437
+      side_0: -1051196049
+      side_1: -1759516889
+      side_2: 33176739
+      side_3: 1749104022
+      side_4: -486987791
+      side_5: -1318762755
+      side_6: -214294475
+      side_7: 1301142893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

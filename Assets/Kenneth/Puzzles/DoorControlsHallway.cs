@@ -75,7 +75,7 @@ public class DoorControlsHallway : MonoBehaviour
     public void FromHallwayToReadingRoom()
     {
         PlayerPrefs.SetFloat("RoomPlayerX", 0f);
-        PlayerPrefs.SetFloat("RoomPlayerY", -396f);
+        PlayerPrefs.SetFloat("RoomPlayerY", -415f);
         PlayerPrefs.SetFloat("RoomPlayerZ", 0f);
 
         PlayerPrefs.SetFloat("RoomCameraLocationX", 0f);

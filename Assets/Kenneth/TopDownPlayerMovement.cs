@@ -48,7 +48,9 @@ public class TopDownPlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
             SFXPlayer.PlayOneShot(footsteps);
+
         }
+
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
