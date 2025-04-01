@@ -47,7 +47,10 @@ public class TopDownPlayerMovement : MonoBehaviour
 
         if (movement.sqrMagnitude >= 1f)
         {
-            Footstep.Play();
+            if (!Footstep.isPlaying)
+            {
+                Footstep.Play();
+            }
         } else
         {
             Footstep.Stop();

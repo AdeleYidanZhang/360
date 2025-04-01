@@ -11,6 +11,7 @@ public class ClockPuzzleMaster : MonoBehaviour
     public Canvas puzzleHint;
     public Canvas eyeUI;
 
+    public AudioSource ticking;
     public int closetDoor;
     public Camera roomCam;
 
@@ -54,6 +55,8 @@ public class ClockPuzzleMaster : MonoBehaviour
 
     public void ClosePuzzle()
     {
+        ticking.Stop();
+
         puzzleHint.gameObject.SetActive(false);
         gameObject.SetActive(false);
         roomCam.transform.position = new Vector3(0, -100f, -100);
@@ -62,6 +65,11 @@ public class ClockPuzzleMaster : MonoBehaviour
 
     public void OpenPuzzle()
     {
+        if (!ticking.isPlaying)
+        {
+            ticking.Play();
+        }
+
         puzzleHint.gameObject.SetActive(true);
         gameObject.SetActive(true);
         roomCam.transform.position = new Vector3(250f, -100f, -100);

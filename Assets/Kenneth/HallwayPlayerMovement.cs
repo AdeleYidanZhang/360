@@ -46,7 +46,10 @@ public class HallwayPlayerMovement : MonoBehaviour
 
         if (rb.velocity.x >= 1f)
         {
-            footsteps.Play();
+            if (!footsteps.isPlaying)
+            {
+                footsteps.Play();
+            }
         }
         else
         {
