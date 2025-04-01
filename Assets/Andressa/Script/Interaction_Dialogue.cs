@@ -11,6 +11,7 @@ public class Interaction_Dialogue : MonoBehaviour
     public float pressCooldown = 0.4f; // 0.2秒冷却时间
 
     public GameObject dialoguePanel;
+    public AudioSource uiPlayer;
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index;
@@ -38,6 +39,7 @@ public class Interaction_Dialogue : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose && timeSinceLastPress >=
         pressCooldown)
         {
+            uiPlayer.Play();
             UI.gameObject.SetActive(false);
             timeSinceLastPress = 0f; // 重置计时器
             if (dialoguePanel.activeInHierarchy)

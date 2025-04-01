@@ -55,11 +55,11 @@ public class UIManager : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
-                DirectionBack.enabled = false;
+                DirectionBack.enabled = true;
             }
             else if (Input.GetKeyDown(KeyCode.A))
             {
-                DirectionLeft.enabled = true;
+                DirectionLeft.enabled = false;
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
@@ -83,11 +83,11 @@ public class UIManager : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
-                DirectionBack.enabled = true;
+                DirectionBack.enabled = false;
             }
             else if (Input.GetKeyDown(KeyCode.A))
             {
-                DirectionLeft.enabled = false;
+                DirectionLeft.enabled = true;
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {

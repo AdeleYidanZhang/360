@@ -61,7 +61,7 @@ public class DoorControlsRoom : MonoBehaviour
         PlayerPrefs.SetFloat("HallCameraLocationX", 0f);
         PlayerPrefs.SetFloat("HallCameraLocationY", -150f);
         PlayerPrefs.SetFloat("HallCameraLocationZ", -60f);
-        PlayerPrefs.SetInt("DirectionCoordiator", 4);
+        PlayerPrefs.SetInt("DirectionCoordiator", 1);
 
         director.EnterHallway();
     }
@@ -75,7 +75,7 @@ public class DoorControlsRoom : MonoBehaviour
         PlayerPrefs.SetFloat("HallCameraLocationX", 0f);
         PlayerPrefs.SetFloat("HallCameraLocationY", -150f);
         PlayerPrefs.SetFloat("HallCameraLocationZ", -60f);
-        PlayerPrefs.SetInt("DirectionCoordiator", 4);
+        PlayerPrefs.SetInt("DirectionCoordiator", 1);
 
         director.EnterHallway();
     }

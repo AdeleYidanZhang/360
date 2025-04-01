@@ -39,4 +39,9 @@ public class SceneDirector : MonoBehaviour
     {
         SceneManager.LoadScene("Room");
     }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
 }

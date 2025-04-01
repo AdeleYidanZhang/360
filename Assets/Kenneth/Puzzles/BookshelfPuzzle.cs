@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class BookshelfPuzzle : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class BookshelfPuzzle : MonoBehaviour
     public bool puzzleSolved;
 
     public GameObject filter;
-    public GameObject WinAnnouncement;
     public TextMeshProUGUI PlayerProgress;
 
     public Camera roomCam;
@@ -28,7 +28,6 @@ public class BookshelfPuzzle : MonoBehaviour
         foundBookOrderYet = false;
         backOffButton.gameObject.SetActive(false);
         puzzleSolved = false;
-        WinAnnouncement.SetActive(false);
         exitBookSelf();
     }
 
@@ -53,8 +52,7 @@ public class BookshelfPuzzle : MonoBehaviour
         {
             if (playerInput == inputCode)
             {
-                puzzleSolved = true;
-                WinAnnouncement.SetActive(true);
+                SceneManager.LoadScene("DemoEndScreen");
             } else
             {
                 playerInput = "";

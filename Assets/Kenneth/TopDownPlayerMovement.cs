@@ -13,7 +13,7 @@ public class TopDownPlayerMovement : MonoBehaviour
     public Animator animator;
 
     public AudioSource SFXPlayer;
-    public AudioClip footsteps;
+    public AudioSource Footstep;
     public AudioClip uiSFX;
     public AudioClip doorSFX;
 
@@ -45,10 +45,12 @@ public class TopDownPlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        if (movement.sqrMagnitude >= 1f)
         {
-            SFXPlayer.PlayOneShot(footsteps);
-
+            Footstep.Play();
+        } else
+        {
+            Footstep.Stop();
         }
 
 

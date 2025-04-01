@@ -15,31 +15,21 @@ public class DemoEndCredits : MonoBehaviour
     //public GameObject contButton;
 
     public float wordSpeed;
-    public bool playerIsClose;
-    public Canvas UI;
-    public GameObject prompt;
-
     private bool isTyping;
 
     private void Start()
     {
-        prompt.SetActive(false);
         dialogueText.text = "";
-        dialoguePanel.SetActive(false);
+        dialoguePanel.SetActive(true);
+        StartCoroutine(Typing());
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            UI.gameObject.SetActive(false);
-
-            if (dialoguePanel.activeInHierarchy)
-            {
-                if (isTyping)
+            if (isTyping)
                 {
                     StopAllCoroutines();
                     dialogueText.text = dialogue[index];
@@ -50,34 +40,6 @@ public class DemoEndCredits : MonoBehaviour
                     NextLine();
                 }
             }
-            else
-            {
-
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-            }
-        }
-
-        //if(Input.GetKeyDown(KeyCode.E) && playerIsClose)
-        //{
-
-        //    if (dialoguePanel.activeInHierarchy)
-        //    {
-        //        zeroText();
-        //    }
-        //    else
-        //    {
-        //        dialoguePanel.SetActive(true);
-        //        StartCoroutine(Typing());
-        //    }
-
-
-        //}
-
-        //if (dialogueText.text == dialogue[index])
-        //{
-        //    contButton.SetActive(true);
-        //}
 
     }
 
@@ -109,24 +71,4 @@ public class DemoEndCredits : MonoBehaviour
             StartCoroutine(Typing());
         }
     }
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerIsClose = true;
-            prompt.SetActive(true);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerIsClose = false;
-            prompt.SetActive(false);
-        }
-    }
-
 }

@@ -11,6 +11,7 @@ public class Interaction_DialogueMouseBookshelf : MonoBehaviour
     public float pressCooldown = 0.4f; // 0.2秒冷却时间
 
     public GameObject dialoguePanel;
+    public AudioSource uiPlayer;
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index;

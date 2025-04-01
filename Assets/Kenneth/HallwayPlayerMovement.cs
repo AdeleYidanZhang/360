@@ -12,10 +12,9 @@ public class HallwayPlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     public Camera hallwayCamera;
-    public bool interactingWithScreen;
 
     public AudioSource SFXPlayer;
-    public AudioClip footsteps;
+    public AudioSource footsteps;
     public AudioClip uiSFX;
     public AudioClip doorSFX;
 
@@ -30,12 +29,29 @@ public class HallwayPlayerMovement : MonoBehaviour
     void Update()
     {
         anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-        horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (PlayerPrefs.GetInt("DirectionCoordiator") == 1 || PlayerPrefs.GetInt("DirectionCoordiator") == 3)
+        {
+            horizontal = Input.GetAxisRaw("Vertical");
+        }
+
+        if (PlayerPrefs.GetInt("DirectionCoordiator") == 2 || PlayerPrefs.GetInt("DirectionCoordiator") == 4)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
+
         Flip();
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+
+
+        if (rb.velocity.x >= 1f)
         {
-            SFXPlayer.PlayOneShot(footsteps);
+            footsteps.Play();
+        }
+        else
+        {
+
+            footsteps.Stop();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -46,14 +62,7 @@ public class HallwayPlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!interactingWithScreen)
-        {
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        }
-        else
-        {
-            rb.velocity = new Vector2(0f, 0f);
-        }
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
     private void Flip()
