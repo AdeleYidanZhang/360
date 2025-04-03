@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 18226408}
   - component: {fileID: 18226409}
+  - component: {fileID: 18226410}
   m_Layer: 0
   m_Name: telephone&note_right
   m_TagString: Untagged
@@ -175,7 +176,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 72d8dc5540825294b9ad4f44d2f07433, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -207,6 +208,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &18226410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18226407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: 72d8dc5540825294b9ad4f44d2f07433, type: 2}
+  interactible: {fileID: 2800000, guid: 09fd9d6e49dcdf04b9192fc4d4cc0152, type: 3}
+  isInRange: 0
 --- !u!1 &20920569
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +309,7 @@ GameObject:
   - component: {fileID: 22247916}
   - component: {fileID: 22247917}
   - component: {fileID: 22247918}
+  - component: {fileID: 22247919}
   m_Layer: 0
   m_Name: table_left
   m_TagString: Untagged
@@ -336,7 +353,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 180afbdce296c0c4098358b273bab90a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -413,6 +430,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &22247919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22247915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: 180afbdce296c0c4098358b273bab90a, type: 2}
+  interactible: {fileID: 2800000, guid: 2537b5b7fc55e664aa1815511be01b48, type: 3}
+  isInRange: 0
 --- !u!1 &31763561
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +500,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 1176805345}
 --- !u!70 &31763564
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -661,6 +694,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 877095010}
 --- !u!1 &46722703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 79109917}
   - component: {fileID: 79109918}
+  - component: {fileID: 79109919}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -1111,7 +1146,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 836a0ab3a5632de45a2c7fb085ee1f8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1143,6 +1178,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &79109919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79109916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: 836a0ab3a5632de45a2c7fb085ee1f8a, type: 2}
+  interactible: {fileID: 2800000, guid: 8fbb28dccf80fcb4b8ecfbb9457c31e5, type: 3}
+  isInRange: 0
 --- !u!1 &88994646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,6 +1753,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 0}
 --- !u!1 &111480684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,6 +2750,7 @@ GameObject:
   - component: {fileID: 230175351}
   - component: {fileID: 230175350}
   - component: {fileID: 230175352}
+  - component: {fileID: 230175353}
   m_Layer: 0
   m_Name: shelf_l
   m_TagString: Untagged
@@ -2726,7 +2778,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c0d5c38bb227e314496ebd34f84e14f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2820,6 +2872,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.49, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &230175353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230175349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: c0d5c38bb227e314496ebd34f84e14f0, type: 2}
+  interactible: {fileID: 2800000, guid: d3264984511137f4a8e3ff0ffc7fe45c, type: 3}
+  isInRange: 0
 --- !u!1 &237318169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,6 +3131,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 1605894856}
 --- !u!1 &265955098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,6 +3706,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 18226410}
 --- !u!1 &385120431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3796,6 +3865,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 1605894856}
 --- !u!1 &403114454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3941,6 +4011,7 @@ GameObject:
   - component: {fileID: 413738851}
   - component: {fileID: 413738852}
   - component: {fileID: 413738853}
+  - component: {fileID: 413738854}
   m_Layer: 0
   m_Name: antique_clock
   m_TagString: Untagged
@@ -3984,7 +4055,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a1d3a04c5b2d5824592d28d1e8a88594, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4061,6 +4132,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &413738854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413738850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: a1d3a04c5b2d5824592d28d1e8a88594, type: 2}
+  interactible: {fileID: 2800000, guid: 5a52f850be59f6b44a2ebc016e3971e5, type: 3}
+  isInRange: 0
 --- !u!1 &417964826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4072,6 +4158,7 @@ GameObject:
   - component: {fileID: 417964827}
   - component: {fileID: 417964828}
   - component: {fileID: 417964829}
+  - component: {fileID: 417964830}
   m_Layer: 0
   m_Name: couch&table_sets
   m_TagString: Untagged
@@ -4092,6 +4179,7 @@ Transform:
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1935909747}
   - {fileID: 31763562}
   - {fileID: 1465265958}
   - {fileID: 1179152229}
@@ -4099,7 +4187,6 @@ Transform:
   - {fileID: 1940628364}
   - {fileID: 1923228807}
   - {fileID: 847472193}
-  - {fileID: 1935909747}
   m_Father: {fileID: 385120432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &417964828
@@ -4122,7 +4209,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4da54c474e133eb4c91d2e2e164cdcef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4143,7 +4230,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 7f1b2de1bfc83404abd6a0f7da05312d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1ef3de786abb0f48a4b9455a5d99bb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4186,7 +4273,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08, y: 0.19}
+  m_Offset: {x: -0.02, y: 0.37}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4199,6 +4286,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.03, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &417964830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417964826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: 4da54c474e133eb4c91d2e2e164cdcef, type: 2}
+  interactible: {fileID: 2800000, guid: 0211bef7b06c9c746ace407ac65f78e8, type: 3}
+  isInRange: 0
 --- !u!1 &433561482
 GameObject:
   m_ObjectHideFlags: 0
@@ -7455,7 +7557,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 75303d4ca1d04df43829b872e96eef53, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63b859f7c1b1ffe43ac4913f0b80be6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7845,6 +7947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877095008}
   - component: {fileID: 877095009}
+  - component: {fileID: 877095010}
   m_Layer: 0
   m_Name: recordPlayer_right
   m_TagString: Untagged
@@ -7888,7 +7991,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 78f162a2cdecb0a43844d72a9651cfeb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7920,6 +8023,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &877095010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877095007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: 78f162a2cdecb0a43844d72a9651cfeb, type: 2}
+  interactible: {fileID: 2800000, guid: a4a12db447d2d084c930bec540645431, type: 3}
+  isInRange: 0
 --- !u!1 &880225499
 GameObject:
   m_ObjectHideFlags: 0
@@ -9850,6 +9968,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 0}
 --- !u!1 &1157038345
 GameObject:
   m_ObjectHideFlags: 0
@@ -9936,6 +10055,7 @@ GameObject:
   - component: {fileID: 1176805342}
   - component: {fileID: 1176805343}
   - component: {fileID: 1176805344}
+  - component: {fileID: 1176805345}
   m_Layer: 0
   m_Name: Couch Lower
   m_TagString: Untagged
@@ -9978,7 +10098,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cd723cef58977c844905fe0858777245, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9999,7 +10119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 22c517ceefb57fa4a98449fa7bd52748, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8041f0e180df38444a97d3e84b51db11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10055,6 +10175,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.42, y: 2.75}
   m_EdgeRadius: 0
+--- !u!114 &1176805345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176805341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: cd723cef58977c844905fe0858777245, type: 2}
+  interactible: {fileID: 2800000, guid: 8041f0e180df38444a97d3e84b51db11, type: 3}
+  isInRange: 0
 --- !u!1001 &1179152228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10174,6 +10309,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 417964830}
 --- !u!1 &1180584138
 GameObject:
   m_ObjectHideFlags: 0
@@ -10759,6 +10895,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 230175353}
+    - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: interactionPrompt
       value: 
       objectReference: {fileID: 1393479920}
@@ -11138,6 +11278,10 @@ PrefabInstance:
       value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 413738854}
+    - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: interactionPrompt
       value: 
       objectReference: {fileID: 1393479920}
@@ -11383,6 +11527,7 @@ GameObject:
   - component: {fileID: 1301878593}
   - component: {fileID: 1301878592}
   - component: {fileID: 1301878594}
+  - component: {fileID: 1301878595}
   m_Layer: 0
   m_Name: shelf_r
   m_TagString: Untagged
@@ -11410,7 +11555,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2778893dcc508a1489e88d22e6fe7184, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11504,6 +11649,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.49, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &1301878595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301878591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: 2778893dcc508a1489e88d22e6fe7184, type: 2}
+  interactible: {fileID: 2800000, guid: 60bd91646c4167a46aaed141c90374e2, type: 3}
+  isInRange: 0
 --- !u!1 &1316781712
 GameObject:
   m_ObjectHideFlags: 0
@@ -13161,6 +13321,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 1940628367}
 --- !u!70 &1465265960
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14614,6 +14775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605894854}
   - component: {fileID: 1605894855}
+  - component: {fileID: 1605894856}
   m_Layer: 0
   m_Name: genealogy
   m_TagString: Untagged
@@ -14658,7 +14820,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a2b230eb6ec36bc43b4d0c30458410e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14690,6 +14852,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1605894856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605894853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: a2b230eb6ec36bc43b4d0c30458410e1, type: 2}
+  interactible: {fileID: 2800000, guid: 220b7fdb02700fa439bbdff1f59135be, type: 3}
+  isInRange: 0
 --- !u!1 &1647045706
 GameObject:
   m_ObjectHideFlags: 0
@@ -14865,6 +15042,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 22247919}
 --- !u!1 &1683170135
 GameObject:
   m_ObjectHideFlags: 0
@@ -16016,6 +16194,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 1301878595}
+    - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: interactionPrompt
       value: 
       objectReference: {fileID: 1393479920}
@@ -16980,7 +17162,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: fa817054803b7e94a8dec9adabcdab06, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a752463ec98bb0a409e8261b2be56661, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17332,7 +17514,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 15338921a121566479d4011bcc0bf716, type: 3}
+  m_Sprite: {fileID: 21300000, guid: beff134b273586e4395c17cfe239a01c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17354,6 +17536,7 @@ GameObject:
   - component: {fileID: 1940628364}
   - component: {fileID: 1940628365}
   - component: {fileID: 1940628366}
+  - component: {fileID: 1940628367}
   m_Layer: 0
   m_Name: Couch Right
   m_TagString: Untagged
@@ -17396,7 +17579,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f93f1e54b4a69ba479e150153929a895, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17417,7 +17600,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0eaeda5397c316941ab9a4a1ebdd8b4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 058399d39a9b1e140bf05836cce75fbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17473,6 +17656,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.76, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1940628367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940628363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: f93f1e54b4a69ba479e150153929a895, type: 2}
+  interactible: {fileID: 2800000, guid: 058399d39a9b1e140bf05836cce75fbc, type: 3}
+  isInRange: 0
 --- !u!1 &1951804301
 GameObject:
   m_ObjectHideFlags: 0
@@ -18868,6 +19066,7 @@ GameObject:
   - component: {fileID: 2067753110}
   - component: {fileID: 2067753111}
   - component: {fileID: 2067753112}
+  - component: {fileID: 2067753113}
   m_Layer: 0
   m_Name: desk
   m_TagString: Untagged
@@ -18912,7 +19111,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9c32bad2f8c0d4f429bee1787acaf528, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18989,6 +19188,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.3, y: 2.7}
   m_EdgeRadius: 0
+--- !u!114 &2067753113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067753109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: 9c32bad2f8c0d4f429bee1787acaf528, type: 2}
+  interactible: {fileID: 2800000, guid: d9a7104fd612f154c802ab2cc9e7c88e, type: 3}
+  isInRange: 0
 --- !u!1001 &2079481300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19005,6 +19219,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -5.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 79109919}
     - target: {fileID: 2532545481482002481, guid: 1cf52d3763246d14f98908e666a6a84f, type: 3}
       propertyPath: interactionPrompt
       value: 
@@ -19287,6 +19505,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 2067753113}
 --- !u!1 &2119913194
 GameObject:
   m_ObjectHideFlags: 0
@@ -19600,6 +19819,7 @@ MonoBehaviour:
   playerIsClose: 0
   UI: {fileID: 1975455696}
   prompt: {fileID: 1393479920}
+  outline: {fileID: 0}
 --- !u!1 &2131261320
 GameObject:
   m_ObjectHideFlags: 0

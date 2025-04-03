@@ -22,6 +22,7 @@ public class Interaction_Dialogue : MonoBehaviour
     public bool playerIsClose;
     public Canvas UI;
     public GameObject prompt;
+    public ShaderManipulation outline;
 
     private bool isTyping;
 
@@ -129,6 +130,7 @@ public class Interaction_Dialogue : MonoBehaviour
         {
             playerIsClose = true;
             prompt.SetActive(true);
+            outline.isInRange = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -136,6 +138,7 @@ public class Interaction_Dialogue : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
+            outline.isInRange = false;
             // 在调用 zeroText() 之前，检查 dialoguePanel 是否为 null
             if (dialoguePanel != null)
             {

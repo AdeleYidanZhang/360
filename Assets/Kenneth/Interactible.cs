@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Interactible : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Interactible : MonoBehaviour
     public UnityEvent interactAction;
     public GameObject interactionPrompt;
     public bool isInteracting;
+    public ShaderManipulation outline;
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class Interactible : MonoBehaviour
         {
             inRange = true;
             interactionPrompt.SetActive(true);
+            outline.isInRange = true;
         }
     }
 
@@ -45,6 +48,7 @@ public class Interactible : MonoBehaviour
         {
             inRange = false;
             interactionPrompt.SetActive(false);
+            outline.isInRange = false;
         }
     }
 }
