@@ -4299,7 +4299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineCreator: {fileID: 2100000, guid: 4da54c474e133eb4c91d2e2e164cdcef, type: 2}
-  interactible: {fileID: 2800000, guid: 0211bef7b06c9c746ace407ac65f78e8, type: 3}
+  interactible: {fileID: 2800000, guid: c1ef3de786abb0f48a4b9455a5d99bb0, type: 3}
   isInRange: 0
 --- !u!1 &433561482
 GameObject:
@@ -9335,6 +9335,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 1647045709}
     - target: {fileID: 3677967264270748348, guid: 66ae2d5061e953243bafbacfbddbf375, type: 3}
       propertyPath: interactionPrompt
       value: 
@@ -14877,6 +14881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647045707}
   - component: {fileID: 1647045708}
+  - component: {fileID: 1647045709}
   m_Layer: 0
   m_Name: stairs 1
   m_TagString: Untagged
@@ -14920,7 +14925,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76f63bb0b9b6f6f4ba293b460f23c3c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14952,6 +14957,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1647045709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647045706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae33e3f7d36c242a45a7041add9889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCreator: {fileID: 2100000, guid: 76f63bb0b9b6f6f4ba293b460f23c3c5, type: 2}
+  interactible: {fileID: 2800000, guid: 1658d32e8a1754b418292cd8996c2e42, type: 3}
+  isInRange: 0
 --- !u!1 &1657500950
 GameObject:
   m_ObjectHideFlags: 0
